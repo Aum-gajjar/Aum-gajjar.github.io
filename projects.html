@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects &amp; Case Studies — Aum Gajjar // Data Analyst</title>
+  
+  <meta name="description" content="Projects and Case Studies by Aum Gajjar — Healthcare Readmission Prediction, Cloud ETL, and Business Intelligence models.">
+  <meta name="author" content="Aum Bimalbhai Gajjar">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="min-h-screen flex flex-col font-body text-sm sm:text-base">
+
+  <!-- Sticky Navbar -->
+  <header class="navbar-sticky">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 py-3.5 flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-3 text-decoration-none group">
+        <div class="status-indicator-dot"></div>
+        <div class="flex flex-col">
+          <span class="font-heading text-base sm:text-lg font-bold tracking-tight text-white group-hover:text-accent transition-colors">
+            Aum Gajjar
+          </span>
+          <span class="text-[11px] font-mono text-muted tracking-tight hidden sm:block">
+            Data Analyst &amp; Engineer // Toronto, CA
+          </span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-1 font-heading text-sm">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="projects.html" class="nav-link active">Projects</a>
+        <a href="experience.html" class="nav-link">Experience</a>
+        <a href="certifications.html" class="nav-link">Certifications</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="mailto:aumgajjar456@gmail.com?subject=Data%20Analyst%20Opportunity" class="btn-primary text-xs py-2 px-4 hidden sm:inline-flex">
+          Get in Touch
+        </a>
+        <button class="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">🌙</button>
+        <button id="mobile-menu-btn" class="md:hidden p-2 border border-white/20 rounded-lg text-white">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 bg-black/95 px-4 py-4 space-y-2 font-heading text-sm">
+      <a href="index.html" class="block py-2 text-gray-300">Home</a>
+      <a href="about.html" class="block py-2 text-gray-300">About</a>
+      <a href="projects.html" class="block py-2 text-accent font-semibold">Projects</a>
+      <a href="experience.html" class="block py-2 text-gray-300">Experience</a>
+      <a href="certifications.html" class="block py-2 text-gray-300">Certifications</a>
+      <a href="contact.html" class="block py-2 text-gray-300">Contact</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-1 w-full max-w-7xl mx-auto p-4 sm:p-8 flex flex-col gap-16 relative z-10">
+
+    <!-- Page Header -->
+    <section class="pt-8">
+      <div class="section-subtitle">Selected Case Studies</div>
+      <h1 class="text-3xl sm:text-5xl font-extrabold text-white mb-4 tracking-tight">
+        Built, Measured, &amp; Deployed
+      </h1>
+      <p class="text-secondary text-base sm:text-lg max-w-3xl leading-relaxed">
+        End-to-end analytical deep dives detailing real clinical data challenges, cloud architectures, and interactive performance simulators.
+      </p>
+    </section>
+
+    <!-- ======================================================================
+         FEATURED LEAD PROJECT: HEALTHCARE READMISSION
+         ====================================================================== -->
+    <section id="lead-project">
+      <div class="lead-project-card p-6 sm:p-10 border border-accent/40 bg-card">
+        
+        <!-- Header Row -->
+        <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 mb-6 pb-6 border-b border-white/10">
+          <div>
+            <div class="flex items-center gap-2 mb-2">
+              <span class="status-pill text-xs">LEAD ACTIVE PROJECT</span>
+              <span class="text-xs font-mono text-muted">CLINICAL ML // N=101,766 RECORDS</span>
+            </div>
+            <h2 class="text-2xl sm:text-4xl font-extrabold text-white font-heading">
+              Healthcare 30-Day Readmission Risk Predictive Model
+            </h2>
+          </div>
+
+          <!-- Action Buttons (GitHub Repo & Live Demo) -->
+          <div class="flex flex-wrap gap-3">
+            <a href="https://github.com/Aum-gajjar" target="_blank" rel="noopener noreferrer" class="btn-secondary text-xs py-2.5 px-4 flex items-center gap-2">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              <span>GitHub Repository ↗</span>
+            </a>
+            <a href="https://github.com/Aum-gajjar" target="_blank" rel="noopener noreferrer" class="btn-primary text-xs py-2.5 px-4">
+              <span>View Deployed App ↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Two Column Breakdown -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          <!-- Left: Narrative & Slider -->
+          <div class="lg:col-span-6 space-y-6">
+            <div>
+              <h3 class="text-lg font-bold text-white mb-2 font-heading">Problem Context &amp; Objective</h3>
+              <p class="text-secondary text-sm leading-relaxed">
+                Hospital readmissions within 30 days of discharge cost healthcare providers billions annually and indicate patient care gaps. Using the <strong>Diabetes 130-US Hospitals</strong> clinical dataset, this project aimed to identify early warning signals and build predictive models to flag high-risk patients before discharge.
+              </p>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-bold text-white mb-2 font-heading">Handling Severe 11.2% Class Imbalance</h3>
+              <p class="text-secondary text-sm leading-relaxed">
+                Only ~11.2% of patient encounters resulted in a 30-day readmission. Standard accuracy was deceptive (an 89% dummy classifier). By engineering stratified validation folds and tuning cost-sensitive loss functions in <strong>XGBoost and LightGBM</strong>, the model achieved <strong>0.5466 Recall</strong> and <strong>0.6804 ROC-AUC</strong>.
+              </p>
+            </div>
+
+            <!-- Decision Threshold Slider Container -->
+            <div class="exec-card p-5 bg-surface/60">
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-xs font-mono font-semibold text-accent uppercase">[ ADJUST DECISION THRESHOLD ]</span>
+                <span id="threshold-val" class="text-white font-bold font-mono text-sm">0.50</span>
+              </div>
+              <input type="range" id="threshold-slider" class="sys-slider my-2" min="5" max="95" value="50">
+              <div id="threshold-interpretation" class="text-xs text-muted leading-tight mt-2 font-mono">
+                Balanced Trade-off: Operational threshold capturing positive readmission cases while controlling nurse follow-up workload.
+              </div>
+            </div>
+
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="tech-pill">Python</span>
+              <span class="tech-pill">pandas</span>
+              <span class="tech-pill">XGBoost</span>
+              <span class="tech-pill">LightGBM</span>
+              <span class="tech-pill">Scikit-Learn</span>
+              <span class="tech-pill">EDA</span>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Confusion Matrix -->
+          <div class="lg:col-span-6">
+            <div class="exec-card p-6 bg-surface">
+              <div class="flex justify-between items-center mb-4">
+                <span class="font-heading text-sm font-bold text-white">Interactive Validation Matrix (N=10,176)</span>
+                <span id="recall-display" class="status-pill text-xs">Recall: 0.5466</span>
+              </div>
+
+              <!-- 2x2 Matrix -->
+              <div class="grid grid-cols-2 gap-3 mb-4">
+                <!-- True Negative -->
+                <div class="matrix-cell">
+                  <span class="text-[11px] font-mono text-muted mb-1">TRUE NEGATIVE (TN)</span>
+                  <span class="text-2xl font-extrabold text-white font-heading" id="val-tn">7,652</span>
+                  <span class="text-[10px] text-muted">Correctly Non-Readmitted</span>
+                </div>
+
+                <!-- False Positive -->
+                <div class="matrix-cell highlight">
+                  <span class="text-[11px] font-mono text-accent mb-1">FALSE POSITIVE (FP)</span>
+                  <span class="text-2xl font-extrabold text-accent font-heading" id="val-fp">1,382</span>
+                  <span class="text-[10px] text-muted">Unnecessary Intervention</span>
+                </div>
+
+                <!-- False Negative -->
+                <div class="matrix-cell">
+                  <span class="text-[11px] font-mono text-muted mb-1">FALSE NEGATIVE (FN)</span>
+                  <span class="text-2xl font-extrabold text-rose-400 font-heading" id="val-fn">518</span>
+                  <span class="text-[10px] text-muted">Missed High-Risk Patients</span>
+                </div>
+
+                <!-- True Positive -->
+                <div class="matrix-cell highlight border-accent">
+                  <span class="text-[11px] font-mono text-white mb-1">TRUE POSITIVE (TP)</span>
+                  <span class="text-2xl font-extrabold text-white font-heading" id="val-tp">624</span>
+                  <span class="text-[10px] text-accent font-medium">Readmissions Caught</span>
+                </div>
+              </div>
+
+              <!-- Computed Performance Chips -->
+              <div class="grid grid-cols-3 gap-2 text-center text-xs font-mono">
+                <div class="p-2 rounded bg-surface-elevated">
+                  <div class="text-muted text-[10px]">PRECISION</div>
+                  <div class="font-bold text-white" id="precision-display">0.3111</div>
+                </div>
+                <div class="p-2 rounded bg-surface-elevated">
+                  <div class="text-muted text-[10px]">F1-SCORE</div>
+                  <div class="font-bold text-white" id="f1-display">0.3964</div>
+                </div>
+                <div class="p-2 rounded bg-surface-elevated">
+                  <div class="text-muted text-[10px]">ROC-AUC</div>
+                  <div class="font-bold text-accent">0.6804</div>
+                </div>
+              </div>
+
+              <div class="mt-4 pt-3 border-t border-white/10 text-xs text-muted leading-relaxed">
+                💡 <strong>Key Finding:</strong> Prior inpatient utilization and the number of emergency room encounters within the previous 12 months were the single strongest predictive signals of 30-day readmission risk.
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         FUTURE ROADMAP: VERSATILE PROJECT SLOTS
+         ====================================================================== -->
+    <section>
+      <div class="section-header">
+        <div class="section-subtitle">Versatile Project Roadmap</div>
+        <h2 class="section-title">Upcoming Projects in Progress</h2>
+        <p class="text-muted text-sm mt-1">
+          Currently architecting three specialized industry-ready analytics and data engineering pipelines.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Slot 1: Fintech & Financial Analytics -->
+        <div class="exec-card p-6 flex flex-col justify-between border-dashed">
+          <div>
+            <div class="flex justify-between items-center mb-3">
+              <span class="status-pill text-[10px]">FINTECH ANALYTICS</span>
+              <span class="text-xs font-mono text-warm font-bold">IN ARCHITECTURE</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2 font-heading">
+              Financial Risk &amp; Transaction Fraud Telemetry
+            </h3>
+            <p class="text-secondary text-xs leading-relaxed mb-4">
+              Real-time anomaly detection and risk scoring engine designed for financial transactional streams, modeling credit default risk and high-velocity anomaly flags.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/10">
+            <div class="text-[11px] font-mono text-muted mb-2">TARGET TOOLS:</div>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="tech-pill text-[11px]">Python</span>
+              <span class="tech-pill text-[11px]">SQL</span>
+              <span class="tech-pill text-[11px]">Power BI</span>
+              <span class="tech-pill text-[11px]">Time Series</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slot 2: Business Sales & Revenue Operations -->
+        <div class="exec-card p-6 flex flex-col justify-between border-dashed">
+          <div>
+            <div class="flex justify-between items-center mb-3">
+              <span class="status-pill text-[10px]">REVENUE OPERATIONS</span>
+              <span class="text-xs font-mono text-warm font-bold">IN ARCHITECTURE</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2 font-heading">
+              Executive Sales KPI &amp; Customer Lifetime Value Engine
+            </h3>
+            <p class="text-secondary text-xs leading-relaxed mb-4">
+              End-to-end commercial reporting suite tracking cohort retention, regional revenue run rates, and predictive Customer Lifetime Value (CLV) segmentation.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/10">
+            <div class="text-[11px] font-mono text-muted mb-2">TARGET TOOLS:</div>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="tech-pill text-[11px]">Power BI</span>
+              <span class="tech-pill text-[11px]">PostgreSQL</span>
+              <span class="tech-pill text-[11px]">DAX</span>
+              <span class="tech-pill text-[11px]">RFM Modeling</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slot 3: Cloud ETL Pipeline (Halight Capstone) -->
+        <div class="exec-card p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-center mb-3">
+              <span class="status-pill text-[10px]">DATA ENGINEERING</span>
+              <span class="text-xs font-mono text-accent font-bold">PRODUCTION CAPSTONE</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2 font-heading">
+              Automated Cloud ETL &amp; Athena Analytics Pipeline
+            </h3>
+            <p class="text-secondary text-xs leading-relaxed mb-4">
+              Led capstone analytics team extracting and transforming 100,000+ records using Python and AWS Data Wrangler to feed live Power BI operational telemetry.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/10">
+            <div class="text-[11px] font-mono text-muted mb-2">TECHNOLOGIES:</div>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="tech-pill text-[11px]">AWS Athena</span>
+              <span class="tech-pill text-[11px]">Data Wrangler</span>
+              <span class="tech-pill text-[11px]">Python</span>
+              <span class="tech-pill text-[11px]">Power BI</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Bottom Navigation -->
+    <div class="flex flex-wrap justify-between items-center gap-4 pt-6 border-t border-white/10">
+      <a href="experience.html" class="btn-primary">
+        View Career Experience Timeline →
+      </a>
+      <a href="contact.html" class="text-accent font-heading font-semibold hover:underline text-sm">
+        Have a Project Inquiry? Contact Direct →
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full border-t border-white/10 py-10 bg-secondary/80 backdrop-blur-md relative z-10 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm font-heading text-muted">
+      <div class="flex items-center gap-2">
+        <div class="w-2 h-2 rounded-full bg-accent"></div>
+        <span class="text-secondary font-medium">Aum Gajjar — Data Analyst Portfolio</span>
+      </div>
+      <div class="flex gap-6">
+        <a href="index.html" class="hover:text-accent transition-colors">Home</a>
+        <a href="about.html" class="hover:text-accent transition-colors">About</a>
+        <a href="projects.html" class="hover:text-accent transition-colors">Projects</a>
+        <a href="experience.html" class="hover:text-accent transition-colors">Experience</a>
+        <a href="certifications.html" class="hover:text-accent transition-colors">Certifications</a>
+        <a href="contact.html" class="hover:text-accent transition-colors">Contact</a>
+      </div>
+      <div class="text-xs text-muted">© 2026 AUM BIMALBHAI GAJJAR. ALL RIGHTS RESERVED.</div>
+    </div>
+  </footer>
+
+  <script src="data/portfolio-data.js"></script>
+  <script src="js/ml-simulator.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

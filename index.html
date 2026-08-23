@@ -3,24 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aum Gajjar // SYSTEM.BOOT // Data Analyst & Engineer</title>
+  <title>Aum Gajjar — Data Analyst &amp; Analytics Engineer</title>
   
-  <meta name="description" content="Personal Data Portfolio of Aum Bimalbhai Gajjar — Data Analyst specializing in Cloud ETL pipelines, predictive ML models, and executive BI dashboards.">
+  <meta name="description" content="Personal portfolio of Aum Gajjar — Data Analyst specializing in Cloud ETL pipelines, predictive ML models, and executive BI dashboards.">
   <meta name="keywords" content="Aum Gajjar, Data Analyst, Business Analyst, ETL, AWS Athena, Power BI, SQL, Python, XGBoost, Toronto">
   <meta name="author" content="Aum Bimalbhai Gajjar">
   
   <!-- Open Graph / Meta -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Aum Gajjar // SYSTEM.BOOT // Data Portfolio">
+  <meta property="og:title" content="Aum Gajjar — Data Analyst &amp; Analytics Engineer">
   <meta property="og:description" content="Bridging the gap between raw data and actionable strategy. Scalable ETL pipelines, predictive models, and executive BI telemetry.">
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
   
   <!-- Three.js CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -28,52 +23,51 @@
   <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="min-h-screen flex flex-col font-mono text-sm sm:text-base selection:bg-[#00A3FF] selection:text-black">
+<body class="min-h-screen flex flex-col font-body text-sm sm:text-base">
 
   <!-- ========================================================================
-       1. STICKY MINIMAL NAVIGATION
+       STICKY NAVIGATION BAR (MULTI-PAGE)
        ======================================================================== -->
   <header class="navbar-sticky">
-    <div class="max-w-7xl mx-auto px-4 sm:px-8 py-3 flex justify-between items-center">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 py-3.5 flex justify-between items-center">
       
-      <!-- Brand & Telemetry Status -->
-      <a href="#hero-section" class="flex items-center gap-3 text-decoration-none group">
+      <!-- Brand Identifier -->
+      <a href="index.html" class="flex items-center gap-3 text-decoration-none group">
         <div class="status-indicator-dot"></div>
         <div class="flex flex-col">
-          <span class="font-matrix text-base sm:text-lg tracking-wider text-white group-hover:text-[#00A3FF] transition-colors">
-            AUM GAJJAR <span class="text-[#00A3FF]">//</span> DATA.ANALYST
+          <span class="font-heading text-base sm:text-lg font-bold tracking-tight text-white group-hover:text-accent transition-colors">
+            Aum Gajjar
           </span>
-          <span class="text-[10px] text-gray-400 tracking-tight hidden sm:block">
-            NODE: TORONTO, CA [43.6532° N, 79.3832° W]
+          <span class="text-[11px] font-mono text-muted tracking-tight hidden sm:block">
+            Data Analyst &amp; Engineer // Toronto, CA
           </span>
         </div>
       </a>
 
-      <!-- Desktop Nav Links -->
-      <nav class="hidden lg:flex items-center gap-1 xl:gap-2 font-matrix text-xs uppercase">
-        <a href="#about-section" class="nav-link">// Diagnostics</a>
-        <a href="#skills-section" class="nav-link">// Stack</a>
-        <a href="#projects-section" class="nav-link">// Projects</a>
-        <a href="#dashboards-section" class="nav-link">// BI Telemetry</a>
-        <a href="#experience-section" class="nav-link">// Runtime Log</a>
-        <a href="#education-section" class="nav-link">// Certificates</a>
-        <a href="#contact-section" class="nav-link text-sys-blue">// Terminal</a>
+      <!-- Desktop Multi-Page Nav Links -->
+      <nav class="hidden md:flex items-center gap-1 font-heading text-sm">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="experience.html" class="nav-link">Experience</a>
+        <a href="certifications.html" class="nav-link">Certifications</a>
+        <a href="contact.html" class="nav-link">Contact</a>
       </nav>
 
-      <!-- Action Buttons (Resume & Theme Toggle) -->
+      <!-- Action Buttons -->
       <div class="flex items-center gap-3">
         <a href="mailto:aumgajjar456@gmail.com?subject=Data%20Analyst%20Opportunity%20-%20Interview%20Request" 
-           class="btn-sys text-xs py-1.5 px-3 hidden sm:inline-flex" id="nav-cv-btn">
-          [ CONTACT DIRECT ]
+           class="btn-primary text-xs py-2 px-4 hidden sm:inline-flex">
+          Get in Touch
         </a>
 
         <!-- Theme Toggle -->
-        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+        <button class="theme-toggle-btn" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
           🌙
         </button>
 
         <!-- Mobile Hamburger Button -->
-        <button id="mobile-menu-btn" class="lg:hidden p-2 border border-white/20 text-white hover:border-[#00A3FF] hover:text-[#00A3FF]">
+        <button id="mobile-menu-btn" class="md:hidden p-2 border border-white/20 rounded-lg text-white hover:border-accent hover:text-accent">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
@@ -82,135 +76,130 @@
     </div>
 
     <!-- Mobile Drawer Menu -->
-    <div id="mobile-menu" class="hidden lg:hidden border-t border-white/10 bg-black/95 px-4 py-4 space-y-2 font-matrix text-sm uppercase">
-      <a href="#about-section" class="block py-2 text-gray-300 hover:text-[#00A3FF]">[ // 01 DIAGNOSTICS ]</a>
-      <a href="#skills-section" class="block py-2 text-gray-300 hover:text-[#00A3FF]">[ // 02 STACK MATRIX ]</a>
-      <a href="#projects-section" class="block py-2 text-gray-300 hover:text-[#00A3FF]">[ // 03 SELECTED WORK ]</a>
-      <a href="#dashboards-section" class="block py-2 text-gray-300 hover:text-[#00A3FF]">[ // 04 BI TELEMETRY ]</a>
-      <a href="#experience-section" class="block py-2 text-gray-300 hover:text-[#00A3FF]">[ // 05 RUNTIME LOG ]</a>
-      <a href="#education-section" class="block py-2 text-gray-300 hover:text-[#00A3FF]">[ // 06 CERTIFICATES ]</a>
-      <a href="#contact-section" class="block py-2 text-[#00A3FF]">[ // 07 TERMINAL &amp; CONTACT ]</a>
+    <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 bg-black/95 px-4 py-4 space-y-2 font-heading text-sm">
+      <a href="index.html" class="block py-2 text-accent font-semibold">Home</a>
+      <a href="about.html" class="block py-2 text-gray-300 hover:text-accent">About</a>
+      <a href="projects.html" class="block py-2 text-gray-300 hover:text-accent">Projects</a>
+      <a href="experience.html" class="block py-2 text-gray-300 hover:text-accent">Experience</a>
+      <a href="certifications.html" class="block py-2 text-gray-300 hover:text-accent">Certifications</a>
+      <a href="contact.html" class="block py-2 text-gray-300 hover:text-accent">Contact</a>
     </div>
   </header>
 
   <!-- ========================================================================
-       MAIN CONTAINER
+       MAIN HOME OVERVIEW
        ======================================================================== -->
   <main class="flex-1 w-full max-w-7xl mx-auto p-4 sm:p-8 flex flex-col gap-16 relative z-10">
 
-    <!-- ======================================================================
-         2. HERO SECTION (> SYSTEM BOOT)
-         ====================================================================== -->
-    <section class="relative py-12 sm:py-20 min-h-[75vh] flex flex-col justify-center border-b border-white/20" id="hero-section">
+    <!-- Hero Section -->
+    <section class="relative py-12 sm:py-20 min-h-[75vh] flex flex-col justify-center border-b border-white/10" id="hero-section">
       <!-- 3D Three.js Particle Point Cloud Canvas -->
       <div id="three-canvas-container"></div>
 
       <div class="flex flex-col lg:flex-row items-center justify-between gap-10 relative z-10 pointer-events-auto w-full">
         
         <div class="max-w-3xl flex-1">
-          <!-- Terminal Boot Prompt -->
-          <div class="inline-flex items-center gap-2 mb-4 px-3 py-1 bg-black/60 border border-[#00A3FF]/40 text-[#00A3FF] text-xs font-mono">
-            <span class="w-2 h-2 bg-[#00A3FF] animate-pulse"></span>
-            <span>SYSTEM_KERNEL_INITIALIZED // READY</span>
+          <!-- Availability Badge -->
+          <div class="inline-flex items-center gap-2 mb-6 px-3.5 py-1.5 rounded-full bg-surface border border-white/10 text-xs font-heading">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span class="text-secondary font-medium">Available for Data Analyst &amp; BI Roles in Canada / Remote</span>
           </div>
 
-          <h1 class="font-matrix text-3xl sm:text-5xl lg:text-6xl uppercase leading-tight mb-6 tracking-wide drop-shadow-lg">
-            > SYSTEM BOOT:<br>
-            <span class="text-white">DATA. INFRASTRUCTURE.</span><br>
-            <span class="text-[#00A3FF]">INSIGHT.</span><span class="cursor-blink"></span>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.15] mb-6 tracking-tight">
+            Bridging raw data and <span class="text-accent">actionable business strategy.</span>
           </h1>
 
-          <p class="font-mono text-gray-300 leading-relaxed text-base sm:text-lg border-l-2 border-[#00A3FF] pl-4 mb-8 bg-black/50 backdrop-blur-md py-3 max-w-2xl">
-            I am a Data Analyst bridging the gap between raw data and actionable strategy. I build scalable ETL pipelines, predictive ML models, and executive BI dashboards.
+          <p class="text-secondary leading-relaxed text-base sm:text-lg mb-8 max-w-2xl font-normal">
+            I am a Data Analyst with 2+ years of experience turning complex datasets into executive narratives. Specializing in cloud ETL pipelines, predictive ML modeling, and Power BI / Tableau dashboards.
           </p>
 
           <!-- Interactive Action Controls -->
           <div class="flex flex-wrap items-center gap-4">
-            <button id="cluster-btn" class="btn-sys text-sm sm:text-base py-3 px-6 shadow-[0_0_15px_rgba(0,163,255,0.2)]">
-              [ RUN XGBoost CLUSTERING ]
+            <a href="projects.html" class="btn-primary">
+              Explore Projects →
+            </a>
+            <button id="cluster-btn" class="btn-secondary">
+              [ Simulate ML Clustering ]
             </button>
-            <a href="#projects-section" class="btn-sys btn-sys-secondary text-sm sm:text-base py-3 px-6">
-              [ EXPLORE WORK ↓ ]
+            <a href="about.html" class="btn-secondary">
+              About Me
             </a>
           </div>
 
-          <div class="mt-6 flex items-center gap-4 text-xs font-mono text-gray-400">
-            <span>⚡ Interactive 3D point cloud: Click button above to simulate 2-class ML clustering.</span>
+          <div class="mt-6 flex items-center gap-2 text-xs font-mono text-muted">
+            <span>💡 Click "Simulate ML Clustering" to interact with the 3D particle data points.</span>
           </div>
         </div>
 
         <!-- 3D Profile Avatar Hologram Widget -->
         <div class="flex flex-col items-center">
-          <div class="font-matrix text-[#00A3FF] text-xs mb-2 tracking-widest flex items-center gap-2">
-            <span class="w-1.5 h-1.5 bg-[#00A3FF]"></span>
-            <span>SYS.ADMIN_ID // AUM_GAJJAR</span>
+          <div class="font-mono text-xs text-accent mb-3 tracking-wider flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+            <span>AUM GAJJAR // TORONTO, CA</span>
           </div>
 
-          <div id="avatar-3d-container" class="w-64 h-64 sm:w-72 sm:h-72 border border-[#00A3FF]/40 bg-black/80 backdrop-blur-md shadow-[0_0_25px_rgba(0,163,255,0.15)] relative">
+          <div id="avatar-3d-container" class="w-64 h-64 sm:w-72 sm:h-72">
             <!-- Three.js Canvas Injected via three-scene.js -->
           </div>
 
-          <div class="mt-2 text-[11px] font-mono text-gray-400 text-center">
-            [ 3D INTERACTIVE TILT // HOVER OVER CARD ]
+          <div class="mt-3 text-[11px] font-mono text-muted text-center">
+            [ Interactive 3D Card // Hover to Tilt ]
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- ======================================================================
-         3. ABOUT & SYSTEM DIAGNOSTICS (// SYSTEM_DIAGNOSTICS)
-         ====================================================================== -->
-    <section id="about-section">
+    <!-- Key Metrics & Diagnostics Summary -->
+    <section>
       <div class="section-header">
-        <h2 class="section-title"><span>// 01</span> SYSTEM_DIAGNOSTICS</h2>
-        <span class="section-tag">Telemetry &amp; Summary</span>
+        <div class="section-subtitle">01 / Proven Impact</div>
+        <h2 class="section-title">Career Diagnostics at a Glance</h2>
       </div>
 
-      <!-- Top Career Metrics Grid -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
         
         <!-- Metric 1: GPA -->
-        <div class="widget-border p-5 bg-black/60 hover:border-[#00A3FF] transition-all group">
-          <div class="font-matrix text-3xl sm:text-4xl mb-2 text-white group-hover:text-[#00A3FF] transition-colors">
-            [ 3.76 ]
+        <div class="exec-card group">
+          <div class="font-heading text-3xl sm:text-4xl font-extrabold mb-1 text-white group-hover:text-accent transition-colors">
+            3.76 <span class="text-sm font-normal text-muted font-mono">/ 4.00</span>
           </div>
-          <div class="font-mono text-xs text-gray-400">
-            <strong class="text-white block mb-1 uppercase font-matrix text-sm">Cumulative GPA</strong>
+          <div class="text-xs text-muted">
+            <strong class="text-white block mb-1 text-sm font-heading font-semibold">Cumulative GPA</strong>
             St. Clair College Data Analytics for Business (Academic Honours).
           </div>
         </div>
 
         <!-- Metric 2: Records Processed -->
-        <div class="widget-border p-5 bg-black/60 hover:border-[#00A3FF] transition-all group">
-          <div class="font-matrix text-3xl sm:text-4xl mb-2 text-white group-hover:text-[#00A3FF] transition-colors">
-            [ 100K+ ]
+        <div class="exec-card group">
+          <div class="font-heading text-3xl sm:text-4xl font-extrabold mb-1 text-white group-hover:text-accent transition-colors">
+            100K+
           </div>
-          <div class="font-mono text-xs text-gray-400">
-            <strong class="text-white block mb-1 uppercase font-matrix text-sm">Records Scaled</strong>
+          <div class="text-xs text-muted">
+            <strong class="text-white block mb-1 text-sm font-heading font-semibold">Records Scaled</strong>
             Extracted &amp; transformed with AWS Athena, Data Wrangler &amp; SQL.
           </div>
         </div>
 
         <!-- Metric 3: ROC-AUC -->
-        <div class="widget-border p-5 bg-black/60 hover:border-[#00A3FF] transition-all group">
-          <div class="font-matrix text-3xl sm:text-4xl mb-2 text-white group-hover:text-[#00A3FF] transition-colors">
-            [ 0.6804 ]
+        <div class="exec-card group">
+          <div class="font-heading text-3xl sm:text-4xl font-extrabold mb-1 text-white group-hover:text-accent transition-colors">
+            0.6804
           </div>
-          <div class="font-mono text-xs text-gray-400">
-            <strong class="text-white block mb-1 uppercase font-matrix text-sm">ROC-AUC Secured</strong>
+          <div class="text-xs text-muted">
+            <strong class="text-white block mb-1 text-sm font-heading font-semibold">ROC-AUC Secured</strong>
             Optimized XGBoost &amp; LightGBM clinical readmission risk models.
           </div>
         </div>
 
         <!-- Metric 4: Live Telemetry Punchcard -->
-        <div class="widget-border p-5 bg-black/60 hover:border-[#00A3FF] transition-all group flex flex-col justify-between">
+        <div class="exec-card group flex flex-col justify-between">
           <div>
             <div class="flex justify-between items-center mb-1">
-              <span class="font-matrix text-sm text-white uppercase">Live Telemetry</span>
-              <span class="text-[10px] text-[#00A3FF] font-mono">28-DAY QUERY LOG</span>
+              <span class="text-sm font-heading font-semibold text-white">Query Activity</span>
+              <span class="text-[10px] text-accent font-mono">28-DAY LOG</span>
             </div>
-            <div class="text-[11px] text-gray-400 mb-2">Commit &amp; Pipeline Activity</div>
+            <div class="text-[11px] text-muted mb-2">Commit &amp; Pipeline Frequency</div>
           </div>
           
           <div class="punch-card-grid mt-auto" id="punch-card">
@@ -219,1001 +208,107 @@
         </div>
 
       </div>
+    </section>
 
-      <!-- Narrative Bio Card -->
-      <div class="widget-border p-6 sm:p-8 bg-black/80">
-        <div class="flex items-center gap-2 mb-4 font-matrix text-sm text-[#00A3FF] uppercase">
-          <span>// EXECUTIVE SUMMARY</span>
+    <!-- Featured Lead Project Preview -->
+    <section>
+      <div class="section-header flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4">
+        <div>
+          <div class="section-subtitle">02 / Featured Case Study</div>
+          <h2 class="section-title">Lead Analytics Project</h2>
         </div>
-        <p class="font-mono text-gray-300 leading-relaxed text-sm sm:text-base mb-4">
-          With over two years of combined experience across data analysis, business reporting, and operational decision support, I specialize in turning complex datasets into clear narratives. Whether I am analyzing 100,000+ records in the cloud or gathering strict reporting requirements from stakeholders, my goal is to deliver insights that drive measurable impact.
+        <a href="projects.html" class="text-accent font-heading font-semibold hover:underline text-sm flex items-center gap-1">
+          View all project deep-dives →
+        </a>
+      </div>
+
+      <div class="lead-project-card p-6 sm:p-8">
+        <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 mb-6">
+          <div>
+            <div class="status-pill mb-3">CLINICAL ANALYTICS &amp; ML // LEAD PROJECT</div>
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-white">
+              Healthcare 30-Day Readmission Risk Predictive Model
+            </h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <a href="projects.html#lead-project" class="btn-primary text-xs py-2 px-4">
+              Interactive Simulation &amp; Case Study →
+            </a>
+          </div>
+        </div>
+
+        <p class="text-secondary leading-relaxed text-sm sm:text-base mb-6 max-w-4xl font-normal">
+          Analyzed the Diabetes 130-US Hospitals dataset (100k+ clinical records) to discover factors associated with 30-day patient readmissions. Solved extreme 11.2% class imbalance using stratified sampling, achieving 0.5466 Recall and 0.6804 ROC-AUC with prior inpatient visits identified as the strongest predictive risk signal.
         </p>
-        <p class="font-mono text-gray-400 leading-relaxed text-sm">
-          Based in Toronto, ON, with Canadian analytics experience supporting cross-functional teams with SQL, Power BI, Python, AWS Athena, and automated ETL pipelines.
+
+        <div class="flex flex-wrap gap-2 pt-4 border-t border-white/10">
+          <span class="tech-pill">Python</span>
+          <span class="tech-pill">pandas</span>
+          <span class="tech-pill">XGBoost</span>
+          <span class="tech-pill">LightGBM</span>
+          <span class="tech-pill">Scikit-Learn</span>
+          <span class="tech-pill">Exploratory Data Analysis</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech Stack Overview -->
+    <section>
+      <div class="section-header flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4">
+        <div>
+          <div class="section-subtitle">03 / Core Competencies</div>
+          <h2 class="section-title">Tools &amp; Technologies</h2>
+        </div>
+        <a href="about.html" class="text-accent font-heading font-semibold hover:underline text-sm flex items-center gap-1">
+          Explore complete technical toolkit →
+        </a>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
+        <div class="exec-card p-4 text-center">
+          <div class="font-heading font-bold text-white mb-1">SQL</div>
+          <div class="text-[11px] text-muted font-mono">Postgres / MySQL</div>
+        </div>
+        <div class="exec-card p-4 text-center">
+          <div class="font-heading font-bold text-white mb-1">Power BI</div>
+          <div class="text-[11px] text-muted font-mono">DAX / Modeling</div>
+        </div>
+        <div class="exec-card p-4 text-center">
+          <div class="font-heading font-bold text-white mb-1">Python</div>
+          <div class="text-[11px] text-muted font-mono">Pandas / ML</div>
+        </div>
+        <div class="exec-card p-4 text-center">
+          <div class="font-heading font-bold text-white mb-1">AWS Athena</div>
+          <div class="text-[11px] text-muted font-mono">Data Wrangler</div>
+        </div>
+        <div class="exec-card p-4 text-center">
+          <div class="font-heading font-bold text-white mb-1">Tableau</div>
+          <div class="text-[11px] text-muted font-mono">Visual Analytics</div>
+        </div>
+        <div class="exec-card p-4 text-center">
+          <div class="font-heading font-bold text-white mb-1">Excel</div>
+          <div class="text-[11px] text-muted font-mono">Pivot / VBA</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Banner -->
+    <section class="exec-card p-8 sm:p-12 text-center relative overflow-hidden bg-gradient-to-r from-secondary to-surface">
+      <div class="max-w-2xl mx-auto relative z-10">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">
+          Ready to turn complex data into measurable business impact?
+        </h2>
+        <p class="text-secondary text-sm sm:text-base mb-8">
+          Available for Data Analyst, Business Intelligence, and Reporting Analyst roles in Toronto, ON, Canada and remote across North America.
         </p>
-      </div>
-    </section>
-
-    <!-- ======================================================================
-         4. TECHNICAL STACK MATRIX (// STACK_MATRIX)
-         ====================================================================== -->
-    <section id="skills-section">
-      <div class="section-header">
-        <h2 class="section-title"><span>// 02</span> STACK_MATRIX</h2>
-        <span class="section-tag">Modular Technical Toolkit</span>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        
-        <!-- Category 1: Data Engineering & Cloud -->
-        <div class="widget-border p-6 bg-black/60 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center gap-2 mb-4 border-b border-white/20 pb-2">
-              <span class="text-[#00A3FF] font-matrix">01</span>
-              <h3 class="font-matrix text-white text-base uppercase">Data Engineering</h3>
-            </div>
-            <ul class="font-mono text-xs sm:text-sm text-gray-300 space-y-2.5 mb-6">
-              <li class="flex items-center gap-2 before:content-['>'] before:text-[#00A3FF]">AWS Athena</li>
-              <li class="flex items-center gap-2 before:content-['>'] before:text-[#00A3FF]">AWS Data Wrangler</li>
-              <li class="flex items-center gap-2 before:content-['>'] before:text-[#00A3FF]">PostgreSQL &amp; MySQL</li>
-              <li class="flex items-center gap-2 before:content-['>'] before:text-[#00A3FF]">SQLite3 &amp; Relational Schemas</li>
-              <li class="flex items-center gap-2 before:content-['>'] before:text-[#00A3FF]">ETL Pipeline Automation</li>
-              <li class="flex items-center gap-2 before:content-['>'] before:text-[#00A3FF]">Selenium &amp; Playwright</li>
-            </ul>
-          </div>
-          <div class="flex flex-wrap gap-1.5 pt-2 border-t border-white/10">
-            <span class="tag-pill">AWS</span>
-            <span class="tag-pill">Postgres</span>
-            <span class="tag-pill">ETL</span>
-          </div>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="contact.html" class="btn-primary">
+            Contact Me Direct
+          </a>
+          <a href="experience.html" class="btn-secondary">
+            View Career Timeline
+          </a>
         </div>
-
-        <!-- Category 2: BI & Analytics -->
-        <div class="widget-border p-6 bg-black/60 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center gap-2 mb-4 border-b border-white/20 pb-2">
-              <span class="text-[#00A3FF] font-matrix">02</span>
-              <h3 class="font-matrix text-white text-base uppercase">BI &amp; Analytics</h3>
-            </div>
-            <ul class="font-mono text-xs sm:text-sm text-gray-300 space-y-2.5 mb-6">
-              <li class="flex items-center gap-2 before:content-['>'] before:text-[#00A3FF]">Power BI &amp; DAX</li>
-              <li class="flex items-center gap-2 before:content-['>'] before:text-[#00A3FF]">Microsoft Excel &amp; VBA</li>
-              <li class="flex items-center gap-2 before:content-['>'] before:text-[#00A3FF]">Tableau Public</li>
-              <li class="flex items-center gap-2 before:content-['>'] before:text-[#00A3FF]">Exploratory Data Analysis (EDA)</li>
-              <li class="flex items-center gap-2 before:content-['>'] before:text-[#00A3FF]">Statistical Hypothesis Testing</li>
-              <li class="flex items-center gap-2 before:content-['>'] before:text-[#00A3FF]">KPI Dashboard Specs</li>
-            </ul>
-          </div>
-          <div class="flex flex-wrap gap-1.5 pt-2 border-t border-white/10">
-            <span class="tag-pill">Power BI</span>
-            <span class="tag-pill">Excel</span>
-            <span class="tag-pill">DAX</span>
-          </div>
-        </div>
-
-        <!-- Category 3: Machine Learning & Python -->
-        <div class="widget-border p-6 bg-black/60 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center gap-2 mb-4 border-b border-white/20 pb-2">
-              <span class="text-[#00A3FF] font-matrix">03</span>
-              <h3 class="font-matrix text-white text-base uppercase">Analytics &amp; ML</h3>
-            </div>
-            <ul class="font-mono text-xs sm:text-sm text-gray-300 space-y-2.5 mb-6">
-              <li class="flex items-center gap-2 before:content-['>'] before:text-[#00A3FF]">Python 3 (pandas, numpy)</li>
-              <li class="flex items-center gap-2 before:content-['>'] before:text-[#00A3FF]">XGBoost Classification</li>
-              <li class="flex items-center gap-2 before:content-['>'] before:text-[#00A3FF]">LightGBM Modeling</li>
-              <li class="flex items-center gap-2 before:content-['>'] before:text-[#00A3FF]">Scikit-Learn Evaluation</li>
-              <li class="flex items-center gap-2 before:content-['>'] before:text-[#00A3FF]">Imbalanced Data Handling</li>
-              <li class="flex items-center gap-2 before:content-['>'] before:text-[#00A3FF]">Feature Importance Analysis</li>
-            </ul>
-          </div>
-          <div class="flex flex-wrap gap-1.5 pt-2 border-t border-white/10">
-            <span class="tag-pill">Python</span>
-            <span class="tag-pill">pandas</span>
-            <span class="tag-pill">XGBoost</span>
-          </div>
-        </div>
-
-        <!-- Category 4: Tools & Delivery -->
-        <div class="widget-border p-6 bg-black/60 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center gap-2 mb-4 border-b border-white/20 pb-2">
-              <span class="text-[#00A3FF] font-matrix">04</span>
-              <h3 class="font-matrix text-white text-base uppercase">Delivery &amp; Systems</h3>
-            </div>
-            <ul class="font-mono text-xs sm:text-sm text-gray-300 space-y-2.5 mb-6">
-              <li class="flex items-center gap-2 before:content-['>'] before:text-[#00A3FF]">SQL Query Optimization</li>
-              <li class="flex items-center gap-2 before:content-['>'] before:text-[#00A3FF]">Jira &amp; Basecamp</li>
-              <li class="flex items-center gap-2 before:content-['>'] before:text-[#00A3FF]">Agile &amp; Scrum Sprints</li>
-              <li class="flex items-center gap-2 before:content-['>'] before:text-[#00A3FF]">Git &amp; GitHub Version Control</li>
-              <li class="flex items-center gap-2 before:content-['>'] before:text-[#00A3FF]">Odoo ERP Systems</li>
-              <li class="flex items-center gap-2 before:content-['>'] before:text-[#00A3FF]">Flask API Microservices</li>
-            </ul>
-          </div>
-          <div class="flex flex-wrap gap-1.5 pt-2 border-t border-white/10">
-            <span class="tag-pill">Git</span>
-            <span class="tag-pill">Jira</span>
-            <span class="tag-pill">Agile</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ======================================================================
-         5. SELECTED WORK (// SELECTED_WORK.EXE)
-         ====================================================================== -->
-    <section id="projects-section">
-      <div class="section-header">
-        <h2 class="section-title"><span>// 03</span> SELECTED_WORK.EXE</h2>
-        <span class="section-tag">Interactive Analytics Deep Dives</span>
-      </div>
-
-      <div class="space-y-8">
-        
-        <!-- Project 1: Healthcare Readmission Predictive Model -->
-        <div class="widget-border bg-black overflow-hidden relative shadow-[0_0_20px_rgba(0,163,255,0.08)]">
-          <div class="status-pill absolute top-0 right-0 z-10 border-t-0 border-r-0 bg-[#00A3FF] text-black font-bold">
-            STATUS: VALIDATED &amp; OPTIMIZED
-          </div>
-
-          <div class="flex flex-col lg:flex-row">
-            <!-- Left Details Column -->
-            <div class="p-6 sm:p-8 lg:w-1/2 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-white/20">
-              <div>
-                <div class="font-matrix text-xs text-[#00A3FF] uppercase tracking-wider mb-2">[ CLINICAL ANALYTICS &amp; ML ]</div>
-                <h3 class="font-matrix text-xl sm:text-2xl text-white mb-4">
-                  Healthcare 30-Day Readmission Risk Predictive Model
-                </h3>
-                <p class="font-mono text-sm text-gray-300 leading-relaxed mb-4">
-                  Analyzed the Diabetes 130-US Hospitals dataset to identify factors associated with 30-day patient readmissions. Identified prior inpatient utilization as a key signal and developed predictive models while strategically handling a highly imbalanced 11.2% positive class.
-                </p>
-
-                <div class="mb-6 p-4 border border-white/20 bg-white/5">
-                  <div class="flex justify-between font-mono text-xs text-gray-300 mb-2">
-                    <span class="text-white font-matrix">[ ADJUST DECISION THRESHOLD ]</span>
-                    <span id="threshold-val" class="text-[#00A3FF] font-bold text-sm">0.50</span>
-                  </div>
-                  <input type="range" id="threshold-slider" class="sys-slider" min="5" max="95" value="50">
-                  <div id="threshold-interpretation" class="text-[11px] text-gray-400 mt-2 leading-tight">
-                    Balanced Trade-off: Optimized operational threshold accounting for the 11.2% imbalanced positive readmission distribution.
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <div class="flex flex-wrap gap-2 mb-4">
-                  <span class="tag-pill">Python</span>
-                  <span class="tag-pill">pandas</span>
-                  <span class="tag-pill">XGBoost</span>
-                  <span class="tag-pill">LightGBM</span>
-                  <span class="tag-pill">ROC-AUC: 0.6804</span>
-                  <span class="tag-pill">Recall: 0.5466</span>
-                </div>
-                <div class="text-xs font-mono text-gray-400">
-                  ✔ Key Finding: Prior inpatient utilization &amp; number of emergency encounters were the strongest predictors of readmission risk.
-                </div>
-              </div>
-            </div>
-
-            <!-- Right Interactive Confusion Matrix Visualizer -->
-            <div class="p-6 sm:p-8 lg:w-1/2 bg-[#050914] flex flex-col justify-center items-center">
-              <div class="w-full max-w-md">
-                <div class="flex justify-between items-center font-matrix text-xs text-gray-400 mb-3 uppercase">
-                  <span>Simulated Validation Matrix (N=10,176)</span>
-                  <span id="recall-display" class="text-[#00A3FF] font-bold text-sm">Recall: 0.5466</span>
-                </div>
-
-                <div class="grid grid-cols-2 gap-2 border border-white/20 p-2 bg-black/60 mb-3">
-                  <!-- True Negatives -->
-                  <div class="matrix-cell">
-                    <span class="font-mono text-[10px] text-gray-500 mb-1">TRUE NEGATIVE (TN)</span>
-                    <span class="font-matrix text-2xl text-white" id="val-tn">7,652</span>
-                    <span class="text-[9px] text-gray-500">Correctly Non-Readmitted</span>
-                  </div>
-
-                  <!-- False Positives -->
-                  <div class="matrix-cell highlight">
-                    <span class="font-mono text-[10px] text-[#00A3FF] mb-1">FALSE POSITIVE (FP)</span>
-                    <span class="font-matrix text-2xl text-[#00A3FF]" id="val-fp">1,382</span>
-                    <span class="text-[9px] text-gray-400">Unnecessary Intervention</span>
-                  </div>
-
-                  <!-- False Negatives -->
-                  <div class="matrix-cell">
-                    <span class="font-mono text-[10px] text-gray-500 mb-1">FALSE NEGATIVE (FN)</span>
-                    <span class="font-matrix text-2xl text-red-400" id="val-fn">518</span>
-                    <span class="text-[9px] text-gray-500">Missed At-Risk Patients</span>
-                  </div>
-
-                  <!-- True Positives -->
-                  <div class="matrix-cell highlight border-[#00A3FF]">
-                    <span class="font-mono text-[10px] text-white mb-1">TRUE POSITIVE (TP)</span>
-                    <span class="font-matrix text-2xl text-white font-bold" id="val-tp">624</span>
-                    <span class="text-[9px] text-[#00A3FF]">Targeted Readmissions Caught</span>
-                  </div>
-                </div>
-
-                <div class="flex justify-between items-center text-xs font-mono text-gray-400 px-1">
-                  <span id="precision-display">Precision: 0.3111</span>
-                  <span id="f1-display">F1-Score: 0.3964</span>
-                  <span class="text-[#00A3FF]">ROC-AUC: 0.6804</span>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Project 2: Enterprise Cloud ETL Pipeline (Halight Inc. Capstone) -->
-        <div class="widget-border bg-black overflow-hidden relative shadow-[0_0_20px_rgba(0,163,255,0.08)]">
-          <div class="status-pill absolute top-0 right-0 z-10 border-t-0 border-r-0 bg-white text-black font-bold">
-            STATUS: PRODUCTION PIPELINE
-          </div>
-
-          <div class="p-6 sm:p-8">
-            <div class="font-matrix text-xs text-[#00A3FF] uppercase tracking-wider mb-2">[ DATA ENGINEERING &amp; ETL ]</div>
-            <h3 class="font-matrix text-xl sm:text-2xl text-white mb-4">
-              Automated Cloud ETL &amp; Business Intelligence Pipeline
-            </h3>
-            <p class="font-mono text-sm text-gray-300 leading-relaxed mb-6 max-w-4xl">
-              Led a data analytics capstone team to engineer automated cloud workflows extracting, transforming, and validating organizational records exceeding 100,000 entries. Connected Amazon S3 through AWS Data Wrangler and Amazon Athena to deliver automated Power BI operational dashboards.
-            </p>
-
-            <!-- Live Animated CSS/JS ETL Flow Diagram -->
-            <div class="etl-diagram-container mb-6">
-              <div class="flex justify-between items-center mb-4">
-                <span class="font-matrix text-xs text-[#00A3FF] uppercase">[ LIVE DATA PIPELINE ARCHITECTURE ]</span>
-                <span class="font-mono text-[11px] text-gray-400">100K+ RECORDS STREAMED</span>
-              </div>
-
-              <!-- Flow Nodes Grid -->
-              <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 relative z-10">
-                <div class="widget-border p-4 bg-black/90 text-center">
-                  <div class="text-[10px] font-mono text-gray-400 mb-1">SOURCE</div>
-                  <div class="font-matrix text-sm text-white">[ Amazon S3 ]</div>
-                  <div class="text-[9px] text-gray-500 mt-1">Raw Ingestion Layer</div>
-                </div>
-
-                <div class="widget-border p-4 bg-black/90 text-center border-[#00A3FF]">
-                  <div class="text-[10px] font-mono text-[#00A3FF] mb-1">TRANSFORMATION</div>
-                  <div class="font-matrix text-sm text-[#00A3FF] font-bold">[ AWS Data Wrangler ]</div>
-                  <div class="text-[9px] text-gray-400 mt-1">Pandas &amp; PyArrow Cleaning</div>
-                </div>
-
-                <div class="widget-border p-4 bg-black/90 text-center">
-                  <div class="text-[10px] font-mono text-gray-400 mb-1">QUERY ENGINE</div>
-                  <div class="font-matrix text-sm text-white">[ AWS Athena ]</div>
-                  <div class="text-[9px] text-gray-500 mt-1">Serverless Presto SQL</div>
-                </div>
-
-                <div class="widget-border p-4 bg-black/90 text-center border-[#00A3FF]">
-                  <div class="text-[10px] font-mono text-[#00A3FF] mb-1">OUTPUT TELEMETRY</div>
-                  <div class="font-matrix text-sm text-white">[ Power BI ]</div>
-                  <div class="text-[9px] text-gray-400 mt-1">DirectQuery Dashboards</div>
-                </div>
-              </div>
-
-              <!-- Animated Flow Track -->
-              <div class="etl-pipeline-track">
-                <div class="etl-packet"></div>
-                <div class="etl-packet"></div>
-                <div class="etl-packet"></div>
-              </div>
-            </div>
-
-            <div class="flex flex-wrap gap-2">
-              <span class="tag-pill">AWS Athena</span>
-              <span class="tag-pill">AWS Data Wrangler</span>
-              <span class="tag-pill">Python</span>
-              <span class="tag-pill">Power BI</span>
-              <span class="tag-pill">Jira</span>
-              <span class="tag-pill">Basecamp</span>
-              <span class="tag-pill">100,000+ Records</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 3: Automated Scraping & Odoo ERP Systems -->
-        <div class="widget-border bg-black p-6 sm:p-8 relative">
-          <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4">
-            <div>
-              <div class="font-matrix text-xs text-[#00A3FF] uppercase tracking-wider mb-1">[ AUTOMATION &amp; ERP ]</div>
-              <h3 class="font-matrix text-xl text-white">Automated Web Ingestion &amp; Odoo ERP Workflow Optimization</h3>
-            </div>
-            <div class="flex gap-2">
-              <span class="tag-pill">Selenium</span>
-              <span class="tag-pill">Playwright</span>
-              <span class="tag-pill">Odoo ERP</span>
-            </div>
-          </div>
-          <p class="font-mono text-sm text-gray-300 leading-relaxed">
-            Constructed resilient automated data extraction pipelines using Selenium, Playwright, and BeautifulSoup to collect structured business data. Analyzed business processes and operational requirements inside Odoo ERP to identify workflow bottlenecks and improve data consistency.
-          </p>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ======================================================================
-         6. DEDICATED LIVE DASHBOARDS SECTION (// BI_TELEMETRY)
-         ====================================================================== -->
-    <section id="dashboards-section">
-      <div class="section-header">
-        <h2 class="section-title"><span>// 04</span> BI_TELEMETRY</h2>
-        <span class="section-tag">Live Embedded BI Dashboards</span>
-      </div>
-
-      <div class="mb-4">
-        <p class="font-mono text-sm text-gray-300">
-          Explore interactive executive dashboards demonstrating KPI tracking, dimensional slicing, and real-time operational telemetry.
-        </p>
-      </div>
-
-      <!-- Dashboard Controls & Tab Selector -->
-      <div class="flex flex-wrap gap-2 mb-4">
-        <button class="btn-sys btn-sys-solid text-xs py-2 px-4 dash-tab-btn" data-target="dash-sales">
-          [ 01: SALES &amp; OPERATIONS KPI ]
-        </button>
-        <button class="btn-sys btn-sys-secondary text-xs py-2 px-4 dash-tab-btn" data-target="dash-health">
-          [ 02: CLINICAL READMISSION RISK ]
-        </button>
-        <button class="btn-sys btn-sys-secondary text-xs py-2 px-4 dash-tab-btn" data-target="dash-supply">
-          [ 03: CLOUD ETL TELEMETRY ]
-        </button>
-      </div>
-
-      <!-- Dashboard Showcase Frame Container -->
-      <div class="dashboard-frame-wrapper widget-border">
-        
-        <!-- Frame Toolbar Header -->
-        <div class="dashboard-toolbar">
-          <div class="flex items-center gap-3">
-            <span class="w-2.5 h-2.5 rounded-full bg-[#00A3FF] animate-pulse"></span>
-            <div>
-              <h4 id="active-dash-title" class="font-matrix text-white text-sm sm:text-base uppercase">
-                Executive Sales &amp; Operations KPI Dashboard
-              </h4>
-              <p id="active-dash-desc" class="font-mono text-xs text-gray-400 max-w-2xl">
-                Enterprise Power BI report tracking 12 operational KPIs, revenue run rate, regional variance, and inventory turnover across 30,000 monthly transactions.
-              </p>
-            </div>
-          </div>
-
-          <div class="flex items-center gap-2">
-            <span id="active-dash-badge" class="status-pill text-[10px]">
-              Power BI // DirectQuery
-            </span>
-          </div>
-        </div>
-
-        <!-- Frame Viewport Area (Responsive iframe containers with fallback simulated views) -->
-        <div class="dashboard-viewport" id="dashboard-viewport">
-          
-          <!-- View 1: Sales & Ops KPI -->
-          <div id="dash-sales" class="dash-view-content w-full h-full p-4 sm:p-6 flex flex-col justify-between overflow-y-auto">
-            
-            <!-- Replace with Tableau Public or Power BI embed URL -->
-            <!-- 
-            <iframe 
-              src="https://app.powerbi.com/view?r=YOUR_EMBED_ID" 
-              title="Sales & Operations KPI Dashboard"
-              allowFullScreen="true">
-            </iframe> 
-            -->
-
-            <!-- High-Fidelity Interactive Simulated BI Interface -->
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
-              <div class="widget-border p-3 bg-black/70">
-                <div class="text-[10px] text-gray-400 uppercase font-mono">Total Revenue</div>
-                <div class="font-matrix text-xl sm:text-2xl text-[#00A3FF]">$2,481,900</div>
-                <div class="text-[10px] text-emerald-400">▲ +14.2% vs target</div>
-              </div>
-              <div class="widget-border p-3 bg-black/70">
-                <div class="text-[10px] text-gray-400 uppercase font-mono">Records Processed</div>
-                <div class="font-matrix text-xl sm:text-2xl text-white">30,000 / mo</div>
-                <div class="text-[10px] text-gray-400">100% data reconciled</div>
-              </div>
-              <div class="widget-border p-3 bg-black/70">
-                <div class="text-[10px] text-gray-400 uppercase font-mono">Manual Time Saved</div>
-                <div class="font-matrix text-xl sm:text-2xl text-emerald-400">15.0%</div>
-                <div class="text-[10px] text-gray-400">Via Python automation</div>
-              </div>
-              <div class="widget-border p-3 bg-black/70">
-                <div class="text-[10px] text-gray-400 uppercase font-mono">Avg SLA Turnaround</div>
-                <div class="font-matrix text-xl sm:text-2xl text-white">4.2 hrs</div>
-                <div class="text-[10px] text-[#00A3FF]">Top quartile performance</div>
-              </div>
-            </div>
-
-            <!-- Visual Charts Mockup with SVG -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 flex-1">
-              
-              <!-- Monthly Trend Line Chart -->
-              <div class="widget-border p-4 bg-black/50 lg:col-span-2 flex flex-col justify-between">
-                <div class="flex justify-between items-center mb-2">
-                  <span class="font-matrix text-xs text-white">MONTHLY REVENUE &amp; DISCREPANCY RECONCILIATION</span>
-                  <span class="text-[10px] text-gray-500 font-mono">SQL + POWER BI</span>
-                </div>
-                
-                <svg viewBox="0 0 600 200" class="w-full h-40">
-                  <defs>
-                    <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stop-color="#00A3FF" stop-opacity="0.4"/>
-                      <stop offset="100%" stop-color="#00A3FF" stop-opacity="0.0"/>
-                    </linearGradient>
-                  </defs>
-                  <!-- Grid -->
-                  <line x1="40" y1="30" x2="580" y2="30" stroke="#334155" stroke-dasharray="2,2"/>
-                  <line x1="40" y1="80" x2="580" y2="80" stroke="#334155" stroke-dasharray="2,2"/>
-                  <line x1="40" y1="130" x2="580" y2="130" stroke="#334155" stroke-dasharray="2,2"/>
-                  <line x1="40" y1="180" x2="580" y2="180" stroke="#475569"/>
-                  
-                  <!-- Area & Line -->
-                  <path d="M50,150 Q120,130 190,110 T330,70 T470,40 T570,30 L570,180 L50,180 Z" fill="url(#areaGrad)"/>
-                  <path d="M50,150 Q120,130 190,110 T330,70 T470,40 T570,30" fill="none" stroke="#00A3FF" stroke-width="3"/>
-                  
-                  <!-- Nodes -->
-                  <circle cx="50" cy="150" r="4" fill="#00A3FF" stroke="#fff"/>
-                  <circle cx="190" cy="110" r="4" fill="#00A3FF" stroke="#fff"/>
-                  <circle cx="330" cy="70" r="4" fill="#00A3FF" stroke="#fff"/>
-                  <circle cx="470" cy="40" r="4" fill="#00A3FF" stroke="#fff"/>
-                  <circle cx="570" cy="30" r="4" fill="#00A3FF" stroke="#fff"/>
-                </svg>
-
-                <div class="flex justify-between text-[10px] text-gray-500 font-mono mt-2">
-                  <span>JAN (20K)</span>
-                  <span>FEB (22K)</span>
-                  <span>MAR (26K)</span>
-                  <span>APR (29K)</span>
-                  <span>MAY (30K RECS)</span>
-                </div>
-              </div>
-
-              <!-- KPI Variance Breakdown -->
-              <div class="widget-border p-4 bg-black/50 flex flex-col justify-between">
-                <span class="font-matrix text-xs text-white mb-3">DISCREPANCY RESOLUTION SPEED</span>
-                
-                <div class="space-y-3 font-mono text-xs">
-                  <div>
-                    <div class="flex justify-between text-gray-400 mb-1">
-                      <span>Data Schema Mismatches</span>
-                      <span class="text-white font-bold">98.4%</span>
-                    </div>
-                    <div class="w-full h-2 bg-gray-800"><div class="h-full bg-[#00A3FF]" style="width: 98.4%"></div></div>
-                  </div>
-                  <div>
-                    <div class="flex justify-between text-gray-400 mb-1">
-                      <span>Invoice Reconciliations</span>
-                      <span class="text-white font-bold">95.1%</span>
-                    </div>
-                    <div class="w-full h-2 bg-gray-800"><div class="h-full bg-emerald-400" style="width: 95.1%"></div></div>
-                  </div>
-                  <div>
-                    <div class="flex justify-between text-gray-400 mb-1">
-                      <span>Tax &amp; Currency Delta</span>
-                      <span class="text-white font-bold">91.8%</span>
-                    </div>
-                    <div class="w-full h-2 bg-gray-800"><div class="h-full bg-[#00A3FF]" style="width: 91.8%"></div></div>
-                  </div>
-                </div>
-
-                <div class="mt-4 pt-2 border-t border-white/10 text-[10px] text-gray-400">
-                  <!-- Replace with Tableau Public or Power BI embed URL -->
-                  <span>Embed code wrapper enabled. Ready for live iFrame integration.</span>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- View 2: Clinical Healthcare (Hidden by default) -->
-          <div id="dash-health" class="dash-view-content hidden w-full h-full p-4 sm:p-6 flex flex-col justify-between overflow-y-auto">
-            
-            <!-- Replace with Tableau Public or Power BI embed URL -->
-            <!-- 
-            <iframe 
-              src="https://public.tableau.com/views/YOUR_HEALTHCARE_DASHBOARD" 
-              title="Healthcare Readmission Risk Analytics"
-              allowFullScreen="true">
-            </iframe> 
-            -->
-
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
-              <div class="widget-border p-3 bg-black/70">
-                <div class="text-[10px] text-gray-400 uppercase font-mono">Cohort Sample Size</div>
-                <div class="font-matrix text-xl sm:text-2xl text-white">101,766</div>
-                <div class="text-[10px] text-gray-400">Diabetes 130-US Hospitals</div>
-              </div>
-              <div class="widget-border p-3 bg-black/70">
-                <div class="text-[10px] text-gray-400 uppercase font-mono">Readmission Positive Rate</div>
-                <div class="font-matrix text-xl sm:text-2xl text-amber-400">11.16%</div>
-                <div class="text-[10px] text-gray-400">Severe Class Imbalance</div>
-              </div>
-              <div class="widget-border p-3 bg-black/70">
-                <div class="text-[10px] text-gray-400 uppercase font-mono">Optimized Recall</div>
-                <div class="font-matrix text-xl sm:text-2xl text-[#00A3FF]">0.5466</div>
-                <div class="text-[10px] text-emerald-400">XGBoost Tuned Model</div>
-              </div>
-              <div class="widget-border p-3 bg-black/70">
-                <div class="text-[10px] text-gray-400 uppercase font-mono">ROC-AUC Score</div>
-                <div class="font-matrix text-xl sm:text-2xl text-[#00A3FF]">0.6804</div>
-                <div class="text-[10px] text-gray-400">Stratified 5-Fold CV</div>
-              </div>
-            </div>
-
-            <!-- Readmission Risk Feature Distribution -->
-            <div class="widget-border p-4 bg-black/60 flex-1 flex flex-col justify-between">
-              <div class="flex justify-between items-center mb-3">
-                <span class="font-matrix text-xs text-white">FEATURE IMPORTANCE &amp; ODDS RATIOS</span>
-                <span class="text-[10px] text-[#00A3FF] font-mono">SHAP VALUE ANALYSIS</span>
-              </div>
-              
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-mono">
-                <div class="space-y-2">
-                  <div class="flex justify-between">
-                    <span class="text-gray-300">1. Prior Inpatient Visits (&gt; 2)</span>
-                    <span class="text-[#00A3FF] font-bold">+2.84 Odds</span>
-                  </div>
-                  <div class="w-full h-1.5 bg-gray-800"><div class="h-full bg-[#00A3FF]" style="width: 88%"></div></div>
-                  
-                  <div class="flex justify-between">
-                    <span class="text-gray-300">2. Number of Emergency Encounters</span>
-                    <span class="text-[#00A3FF] font-bold">+2.12 Odds</span>
-                  </div>
-                  <div class="w-full h-1.5 bg-gray-800"><div class="h-full bg-[#00A3FF]" style="width: 74%"></div></div>
-                </div>
-
-                <div class="space-y-2">
-                  <div class="flex justify-between">
-                    <span class="text-gray-300">3. Number of Lab Procedures (&gt; 65)</span>
-                    <span class="text-white font-bold">+1.48 Odds</span>
-                  </div>
-                  <div class="w-full h-1.5 bg-gray-800"><div class="h-full bg-white/70" style="width: 58%"></div></div>
-
-                  <div class="flex justify-between">
-                    <span class="text-gray-300">4. Diagnosis Code Category (Circulatory)</span>
-                    <span class="text-white font-bold">+1.32 Odds</span>
-                  </div>
-                  <div class="w-full h-1.5 bg-gray-800"><div class="h-full bg-white/70" style="width: 49%"></div></div>
-                </div>
-              </div>
-
-              <div class="mt-4 pt-2 border-t border-white/10 text-[10px] text-gray-500">
-                <!-- Replace with Tableau Public or Power BI embed URL -->
-                <span>[ Tableau Public iFrame container configured for instantaneous embed injection ]</span>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- View 3: Cloud ETL Telemetry (Hidden by default) -->
-          <div id="dash-supply" class="dash-view-content hidden w-full h-full p-4 sm:p-6 flex flex-col justify-between overflow-y-auto">
-            
-            <!-- Replace with Tableau Public or Power BI embed URL -->
-            <!-- 
-            <iframe 
-              src="https://app.powerbi.com/view?r=YOUR_ATHENA_TELEMETRY_ID" 
-              title="Cloud ETL Telemetry Dashboard"
-              allowFullScreen="true">
-            </iframe> 
-            -->
-
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
-              <div class="widget-border p-3 bg-black/70">
-                <div class="text-[10px] text-gray-400 uppercase font-mono">Athena Queries Run</div>
-                <div class="font-matrix text-xl sm:text-2xl text-white">4,812</div>
-                <div class="text-[10px] text-emerald-400">99.9% Success Rate</div>
-              </div>
-              <div class="widget-border p-3 bg-black/70">
-                <div class="text-[10px] text-gray-400 uppercase font-mono">Data Scanned (S3)</div>
-                <div class="font-matrix text-xl sm:text-2xl text-[#00A3FF]">1.42 TB</div>
-                <div class="text-[10px] text-gray-400">Partition-Optimized</div>
-              </div>
-              <div class="widget-border p-3 bg-black/70">
-                <div class="text-[10px] text-gray-400 uppercase font-mono">Avg Query Execution</div>
-                <div class="font-matrix text-xl sm:text-2xl text-white">1.18 sec</div>
-                <div class="text-[10px] text-emerald-400">Sub-2s SLA met</div>
-              </div>
-              <div class="widget-border p-3 bg-black/70">
-                <div class="text-[10px] text-gray-400 uppercase font-mono">ETL Batch Failures</div>
-                <div class="font-matrix text-xl sm:text-2xl text-emerald-400">0</div>
-                <div class="text-[10px] text-gray-400">Zero unhandled exceptions</div>
-              </div>
-            </div>
-
-            <div class="widget-border p-4 bg-black/60 flex-1 flex flex-col justify-between">
-              <div class="flex justify-between items-center mb-3">
-                <span class="font-matrix text-xs text-white">HALIGHT INC. CAPSTONE PIPELINE TELEMETRY</span>
-                <span class="text-[10px] text-[#00A3FF] font-mono">AWS WRANGLER ENGINE</span>
-              </div>
-              <div class="font-mono text-xs text-gray-300 space-y-2">
-                <div>✔ <strong>Ingestion Source:</strong> Partitioned Parquet files on Amazon S3</div>
-                <div>✔ <strong>Transformation Engine:</strong> AWS Data Wrangler &amp; Python multi-threaded cleaning</div>
-                <div>✔ <strong>Semantic Data Model:</strong> Star-schema dimensional tables feeding Power BI DirectQuery</div>
-              </div>
-              <div class="mt-4 pt-2 border-t border-white/10 text-[10px] text-gray-500">
-                <!-- Replace with Tableau Public or Power BI embed URL -->
-                <span>[ Power BI Telemetry container configured for instantaneous embed injection ]</span>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ======================================================================
-         7. RUNTIME LOG / EXPERIENCE (// RUNTIME_LOG.txt)
-         ====================================================================== -->
-    <section id="experience-section">
-      <div class="section-header">
-        <h2 class="section-title"><span>// 05</span> RUNTIME_LOG.txt</h2>
-        <span class="section-tag">Chronological Career Execution</span>
-      </div>
-
-      <div class="space-y-6">
-        
-        <!-- Role 1: Reporting Analyst -->
-        <div class="timeline-item">
-          <div class="timeline-node"></div>
-          
-          <div class="widget-border p-6 bg-black/70 group">
-            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-3">
-              <div>
-                <h3 class="font-matrix text-lg sm:text-xl text-white group-hover:text-[#00A3FF] transition-colors uppercase">
-                  Reporting Analyst <span class="text-gray-500 font-mono text-sm">/ Self-Employed</span>
-                </h3>
-                <div class="font-mono text-xs text-gray-400">Toronto, ON | Remote</div>
-              </div>
-              <div class="status-pill text-[#00A3FF] border-[#00A3FF]">
-                May 2026 – Present
-              </div>
-            </div>
-
-            <ul class="font-mono text-xs sm:text-sm text-gray-300 space-y-2 mb-4">
-              <li class="flex items-start gap-2 before:content-['•'] before:text-[#00A3FF]">
-                Analyze and reconcile <strong>20,000–30,000 records per reporting cycle</strong> using SQL, Excel, Python, and Power BI to identify trends, exceptions, and reporting discrepancies.
-              </li>
-              <li class="flex items-start gap-2 before:content-['•'] before:text-[#00A3FF]">
-                Develop and maintain <strong>3–5 Power BI dashboards</strong> and recurring reports tracking 10–15 KPIs for operational review and business decision-making.
-              </li>
-              <li class="flex items-start gap-2 before:content-['•'] before:text-[#00A3FF]">
-                Automate recurring data-preparation and reporting activities, reducing manual reporting effort by <strong>10–15%</strong> while improving consistency across reporting cycles.
-              </li>
-              <li class="flex items-start gap-2 before:content-['•'] before:text-[#00A3FF]">
-                Gather reporting requirements from 3–5 stakeholders and translate business needs into dashboard specifications, KPI definitions, and analytical workflows.
-              </li>
-            </ul>
-
-            <div class="flex flex-wrap gap-1.5 pt-3 border-t border-white/10">
-              <span class="tag-pill">SQL</span>
-              <span class="tag-pill">Python</span>
-              <span class="tag-pill">Power BI</span>
-              <span class="tag-pill">Excel</span>
-              <span class="tag-pill">Data Reconciliation</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Role 2: Data Analyst Co-op, Project Lead (Halight Inc.) -->
-        <div class="timeline-item">
-          <div class="timeline-node"></div>
-          
-          <div class="widget-border p-6 bg-black/70 group">
-            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-3">
-              <div>
-                <h3 class="font-matrix text-lg sm:text-xl text-white group-hover:text-[#00A3FF] transition-colors uppercase">
-                  Data Analyst Co-op, Project Lead <span class="text-gray-500 font-mono text-sm">/ Halight Inc.</span>
-                </h3>
-                <div class="font-mono text-xs text-gray-400">Windsor, ON</div>
-              </div>
-              <div class="status-pill">
-                Jan 2026 – Apr 2026
-              </div>
-            </div>
-
-            <ul class="font-mono text-xs sm:text-sm text-gray-300 space-y-2 mb-4">
-              <li class="flex items-start gap-2 before:content-['•'] before:text-[#00A3FF]">
-                Led a data analytics capstone team in developing <strong>Power BI performance dashboards</strong> supporting stakeholder access to organizational metrics and reporting information.
-              </li>
-              <li class="flex items-start gap-2 before:content-['•'] before:text-[#00A3FF]">
-                Built automated data workflows using <strong>Python and AWS Data Wrangler</strong> to extract, transform, and process organizational data from Amazon Athena.
-              </li>
-              <li class="flex items-start gap-2 before:content-['•'] before:text-[#00A3FF]">
-                Analyzed datasets containing <strong>100,000+ records</strong>, performing data cleaning, validation, exploratory analysis, and preparation for reporting.
-              </li>
-              <li class="flex items-start gap-2 before:content-['•'] before:text-[#00A3FF]">
-                Managed project workflows through Jira and Basecamp, maintaining documentation, tracking deliverables, and coordinating stakeholder communication.
-              </li>
-            </ul>
-
-            <div class="flex flex-wrap gap-1.5 pt-3 border-t border-white/10">
-              <span class="tag-pill">AWS Athena</span>
-              <span class="tag-pill">AWS Data Wrangler</span>
-              <span class="tag-pill">Power BI</span>
-              <span class="tag-pill">Python</span>
-              <span class="tag-pill">Jira</span>
-              <span class="tag-pill">Basecamp</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Role 3: Data Analyst (Orange Technolab) -->
-        <div class="timeline-item">
-          <div class="timeline-node"></div>
-          
-          <div class="widget-border p-6 bg-black/70 group">
-            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-3">
-              <div>
-                <h3 class="font-matrix text-lg sm:text-xl text-white group-hover:text-[#00A3FF] transition-colors uppercase">
-                  Data Analyst <span class="text-gray-500 font-mono text-sm">/ Orange Technolab Private Limited</span>
-                </h3>
-                <div class="font-mono text-xs text-gray-400">Gujarat, India | Hybrid</div>
-              </div>
-              <div class="status-pill">
-                Aug 2022 – Jul 2024
-              </div>
-            </div>
-
-            <ul class="font-mono text-xs sm:text-sm text-gray-300 space-y-2 mb-4">
-              <li class="flex items-start gap-2 before:content-['•'] before:text-[#00A3FF]">
-                Analyzed business and operational data using Python, SQL, Excel, and pandas to support reporting, trend analysis, and business decision-making.
-              </li>
-              <li class="flex items-start gap-2 before:content-['•'] before:text-[#00A3FF]">
-                Extracted, cleaned, transformed, and validated data from multiple sources to improve data quality and prepare structured datasets for analytics.
-              </li>
-              <li class="flex items-start gap-2 before:content-['•'] before:text-[#00A3FF]">
-                Analyzed business requirements, operational workflows, and reporting needs within <strong>Odoo ERP</strong> to identify improvement opportunities.
-              </li>
-              <li class="flex items-start gap-2 before:content-['•'] before:text-[#00A3FF]">
-                Developed automated data-extraction workflows using <strong>Python, BeautifulSoup, Playwright, and Selenium</strong>.
-              </li>
-            </ul>
-
-            <div class="flex flex-wrap gap-1.5 pt-3 border-t border-white/10">
-              <span class="tag-pill">Python</span>
-              <span class="tag-pill">SQL</span>
-              <span class="tag-pill">Odoo ERP</span>
-              <span class="tag-pill">Selenium</span>
-              <span class="tag-pill">Playwright</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Role 4: IT Technician (St. Clair College) -->
-        <div class="timeline-item">
-          <div class="timeline-node"></div>
-          
-          <div class="widget-border p-6 bg-black/70 group">
-            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-3">
-              <div>
-                <h3 class="font-matrix text-lg sm:text-xl text-white group-hover:text-[#00A3FF] transition-colors uppercase">
-                  IT Technician (Part-Time) <span class="text-gray-500 font-mono text-sm">/ St. Clair College</span>
-                </h3>
-                <div class="font-mono text-xs text-gray-400">Windsor, ON</div>
-              </div>
-              <div class="status-pill">
-                Aug 2025 – Apr 2026
-              </div>
-            </div>
-
-            <p class="font-mono text-xs sm:text-sm text-gray-300 mb-3">
-              Provided front-line technical support at the TD Student Success Centre, resolving <strong>80%+ of immediate student IT inquiries</strong> involving portal access, authentication, printing, hardware, and workstations. Documented and escalated complex technical issues to central IT.
-            </p>
-
-            <div class="flex flex-wrap gap-1.5 pt-3 border-t border-white/10">
-              <span class="tag-pill">Hardware Ecosystems</span>
-              <span class="tag-pill">Ticketing &amp; Escalation</span>
-              <span class="tag-pill">Troubleshooting</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ======================================================================
-         8. EDUCATION & CERTIFICATES (// CERTIFICATES.sys)
-         ====================================================================== -->
-    <section id="education-section">
-      <div class="section-header">
-        <h2 class="section-title"><span>// 06</span> CERTIFICATES.sys</h2>
-        <span class="section-tag">Academic Degrees &amp; Honors</span>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-        
-        <!-- Degree 1 -->
-        <div class="widget-border p-6 bg-black/70 flex flex-col justify-between">
-          <div>
-            <div class="flex justify-between items-start mb-3">
-              <span class="status-pill text-[#00A3FF] border-[#00A3FF]">GPA: 3.76 / 4.00</span>
-              <span class="text-xs font-mono text-gray-400">Sep 2024 – Apr 2026</span>
-            </div>
-            <h3 class="font-matrix text-lg sm:text-xl text-white mb-1 uppercase">
-              Graduate Certificate in Data Analytics for Business
-            </h3>
-            <div class="font-mono text-xs text-[#00A3FF] mb-3">
-              St. Clair College, Windsor, ON [Academic Honours]
-            </div>
-            <p class="font-mono text-xs sm:text-sm text-gray-400 leading-relaxed">
-              Curriculum focused on enterprise analytics, statistical modeling, database architectures, machine learning algorithms, cloud telemetry, and executive BI reporting.
-            </p>
-          </div>
-          <div class="mt-4 pt-3 border-t border-white/10 font-matrix text-xs text-white">
-            HONOURS: DEAN'S LIST // ACADEMIC HONOURS
-          </div>
-        </div>
-
-        <!-- Degree 2 -->
-        <div class="widget-border p-6 bg-black/70 flex flex-col justify-between">
-          <div>
-            <div class="flex justify-between items-start mb-3">
-              <span class="status-pill">Undergraduate</span>
-              <span class="text-xs font-mono text-gray-400">Jul 2019 – Jul 2023</span>
-            </div>
-            <h3 class="font-matrix text-lg sm:text-xl text-white mb-1 uppercase">
-              Bachelor of Engineering in Electronics &amp; Communication
-            </h3>
-            <div class="font-mono text-xs text-[#00A3FF] mb-3">
-              L.J. Institute of Engineering and Technology, Gujarat, India
-            </div>
-            <p class="font-mono text-xs sm:text-sm text-gray-400 leading-relaxed">
-              Foundational education in digital logic, programming systems, network protocols, signal processing, and computational mathematical logic.
-            </p>
-          </div>
-          <div class="mt-4 pt-3 border-t border-white/10 font-matrix text-xs text-gray-400">
-            DISCIPLINE: ENGINEERING SYSTEMS &amp; NETWORKING
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Professional Certifications Bar -->
-      <div class="widget-border p-6 bg-black/80">
-        <h3 class="font-matrix text-sm text-[#00A3FF] uppercase mb-4 tracking-wider">[ PROFESSIONAL LEARNING &amp; CERTIFICATIONS ]</h3>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 font-mono text-xs">
-          <div class="p-3 border border-white/10 bg-white/5">
-            <div class="text-white font-bold mb-1">Microsoft Azure Fundamentals (AZ-900)</div>
-            <div class="text-gray-400">Exam Preparation &amp; Cloud Fundamentals</div>
-          </div>
-          <div class="p-3 border border-white/10 bg-white/5">
-            <div class="text-white font-bold mb-1">Career Essentials in Data Analysis</div>
-            <div class="text-gray-400">Microsoft &amp; LinkedIn Learning</div>
-          </div>
-          <div class="p-3 border border-white/10 bg-white/5">
-            <div class="text-white font-bold mb-1">Python Essential Training</div>
-            <div class="text-gray-400">Advanced Scripts, OOP &amp; Data Analysis</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======================================================================
-         9. INTERACTIVE CLI TERMINAL & CONTACT SECTION (// TERMINAL.EXE)
-         ====================================================================== -->
-    <section id="contact-section">
-      <div class="section-header">
-        <h2 class="section-title"><span>// 07</span> TERMINAL.EXE &amp; CONTACT</h2>
-        <span class="section-tag">Interactive CLI &amp; Direct Transmission</span>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-        
-        <!-- Left: Interactive CLI Terminal (7 cols) -->
-        <div class="lg:col-span-7">
-          <div class="font-matrix text-xs text-gray-400 mb-2 uppercase flex items-center justify-between">
-            <span>[ SYSTEM COMMAND PROMPT // TYPE 'help' OR 'sudo hire aum' ]</span>
-            <span class="text-[#00A3FF] animate-pulse">● INTERACTIVE</span>
-          </div>
-
-          <div class="terminal-window widget-border" id="terminal-container">
-            <div class="terminal-header">
-              <span class="text-white font-matrix">root@aum-os: ~/portfolio</span>
-              <div class="flex gap-2">
-                <span class="w-2.5 h-2.5 bg-red-500 rounded-full inline-block"></span>
-                <span class="w-2.5 h-2.5 bg-yellow-500 rounded-full inline-block"></span>
-                <span class="w-2.5 h-2.5 bg-green-500 rounded-full inline-block"></span>
-              </div>
-            </div>
-
-            <!-- Terminal Output Buffer -->
-            <div id="terminal-output" class="terminal-body">
-              <!-- Text printed via terminal.js -->
-            </div>
-
-            <!-- Terminal Input Row -->
-            <div class="terminal-input-row">
-              <span class="text-[#00A3FF] mr-2 font-mono text-sm font-bold">root@aum-os:~$</span>
-              <input type="text" id="cmd-input" class="terminal-input" placeholder="type 'help' or 'sudo hire aum'..." autocomplete="off" spellcheck="false">
-            </div>
-          </div>
-        </div>
-
-        <!-- Right: Direct Transmission & Contact Channels (5 cols) -->
-        <div class="lg:col-span-5 flex flex-col justify-between gap-4">
-          
-          <!-- Contact Card -->
-          <div class="widget-border p-6 bg-black/80">
-            <h3 class="font-matrix text-base text-white uppercase mb-4 border-b border-white/20 pb-2">
-              Direct Contact Protocols
-            </h3>
-
-            <div class="space-y-3 font-mono text-xs mb-6">
-              
-              <!-- Email Item with Copy Button -->
-              <div class="flex justify-between items-center p-2.5 border border-white/10 bg-white/5">
-                <div>
-                  <div class="text-gray-400 text-[10px]">EMAIL ADDRESS</div>
-                  <div class="text-white font-bold">aumgajjar456@gmail.com</div>
-                </div>
-                <button class="btn-sys text-[10px] py-1 px-2.5" id="btn-copy-email" 
-                        onclick="copyToClipboard('aumgajjar456@gmail.com', 'btn-copy-email')">
-                  [ COPY ]
-                </button>
-              </div>
-
-              <!-- Phone Item with Call / Copy -->
-              <div class="flex justify-between items-center p-2.5 border border-white/10 bg-white/5">
-                <div>
-                  <div class="text-gray-400 text-[10px]">PHONE / MOBILE</div>
-                  <div class="text-white font-bold">(647) 629-2456</div>
-                </div>
-                <button class="btn-sys text-[10px] py-1 px-2.5" id="btn-copy-phone" 
-                        onclick="copyToClipboard('(647) 629-2456', 'btn-copy-phone')">
-                  [ COPY ]
-                </button>
-              </div>
-
-              <!-- Location -->
-              <div class="p-2.5 border border-white/10 bg-white/5">
-                <div class="text-gray-400 text-[10px]">LOCATION</div>
-                <div class="text-white font-bold">Toronto, ON M4S 0A4, Canada</div>
-              </div>
-            </div>
-
-            <!-- Social Links Buttons -->
-            <div class="grid grid-cols-2 gap-3">
-              <a href="https://www.linkedin.com/in/aum-gajjar-837874217" target="_blank" rel="noopener noreferrer" 
-                 class="btn-sys btn-sys-secondary text-xs py-2.5 text-center">
-                [ LinkedIn ↗ ]
-              </a>
-              <a href="https://github.com/Aum-gajjar" target="_blank" rel="noopener noreferrer" 
-                 class="btn-sys btn-sys-secondary text-xs py-2.5 text-center">
-                [ GitHub ↗ ]
-              </a>
-            </div>
-          </div>
-
-          <!-- Quick Message Dispatch Form -->
-          <div class="widget-border p-6 bg-black/80">
-            <h4 class="font-matrix text-sm text-[#00A3FF] uppercase mb-3">// TRANSMIT MESSAGE</h4>
-            
-            <form id="contact-form" class="space-y-3 font-mono text-xs">
-              <div>
-                <input type="text" id="contact-name" placeholder="YOUR NAME / COMPANY" required 
-                       class="w-full bg-black border border-white/20 p-2.5 text-white outline-none focus:border-[#00A3FF]">
-              </div>
-              <div>
-                <input type="email" id="contact-email" placeholder="YOUR EMAIL ADDRESS" required 
-                       class="w-full bg-black border border-white/20 p-2.5 text-white outline-none focus:border-[#00A3FF]">
-              </div>
-              <div>
-                <textarea id="contact-message" rows="3" placeholder="PROJECT DETAILS / RECRUITING INQUIRY..." required 
-                          class="w-full bg-black border border-white/20 p-2.5 text-white outline-none focus:border-[#00A3FF]"></textarea>
-              </div>
-              <button type="submit" class="btn-sys btn-sys-solid w-full text-xs py-2.5">
-                [ DISPATCH TRANSMISSION ]
-              </button>
-              <div id="form-feedback" class="text-[11px] font-mono text-center min-h-[18px]"></div>
-            </form>
-          </div>
-
-        </div>
-
       </div>
     </section>
 
@@ -1222,33 +317,30 @@
   <!-- ========================================================================
        FOOTER
        ======================================================================== -->
-  <footer class="w-full border-t border-white/20 py-8 bg-black/90 backdrop-blur-md relative z-10 mt-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-mono text-gray-400">
+  <footer class="w-full border-t border-white/10 py-10 bg-secondary/80 backdrop-blur-md relative z-10 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm font-heading text-muted">
       <div class="flex items-center gap-2">
-        <div class="w-2 h-2 bg-[#00A3FF]"></div>
-        <span>SYSTEM.BOOT v2.0 // AUM GAJJAR DATA PORTFOLIO</span>
+        <div class="w-2 h-2 rounded-full bg-accent"></div>
+        <span class="text-secondary font-medium">Aum Gajjar — Data Analyst Portfolio</span>
       </div>
 
-      <div class="flex gap-6 font-matrix uppercase">
-        <a href="#hero-section" class="hover:text-[#00A3FF] transition-colors">[ Top ↑ ]</a>
-        <a href="https://github.com/Aum-gajjar" target="_blank" class="hover:text-[#00A3FF] transition-colors">[ GitHub ]</a>
-        <a href="https://www.linkedin.com/in/aum-gajjar-837874217" target="_blank" class="hover:text-[#00A3FF] transition-colors">[ LinkedIn ]</a>
-        <a href="mailto:aumgajjar456@gmail.com" class="hover:text-[#00A3FF] transition-colors">[ Email ]</a>
+      <div class="flex gap-6">
+        <a href="about.html" class="hover:text-accent transition-colors">About</a>
+        <a href="projects.html" class="hover:text-accent transition-colors">Projects</a>
+        <a href="experience.html" class="hover:text-accent transition-colors">Experience</a>
+        <a href="certifications.html" class="hover:text-accent transition-colors">Certifications</a>
+        <a href="contact.html" class="hover:text-accent transition-colors">Contact</a>
       </div>
 
-      <div class="text-[11px] text-gray-500">
+      <div class="text-xs text-muted">
         © 2026 AUM BIMALBHAI GAJJAR. ALL RIGHTS RESERVED.
       </div>
     </div>
   </footer>
 
-  <!-- Data Store -->
+  <!-- Scripts -->
   <script src="data/portfolio-data.js"></script>
-
-  <!-- Application Scripts -->
   <script src="js/three-scene.js"></script>
-  <script src="js/ml-simulator.js"></script>
-  <script src="js/terminal.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

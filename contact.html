@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Aum Gajjar // Data Analyst</title>
+  
+  <meta name="description" content="Contact Aum Gajjar — Data Analyst available for full-time and contract roles in Toronto, ON, Canada and remote.">
+  <meta name="author" content="Aum Bimalbhai Gajjar">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="min-h-screen flex flex-col font-body text-sm sm:text-base">
+
+  <!-- Sticky Navbar -->
+  <header class="navbar-sticky">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 py-3.5 flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-3 text-decoration-none group">
+        <div class="status-indicator-dot"></div>
+        <div class="flex flex-col">
+          <span class="font-heading text-base sm:text-lg font-bold tracking-tight text-white group-hover:text-accent transition-colors">
+            Aum Gajjar
+          </span>
+          <span class="text-[11px] font-mono text-muted tracking-tight hidden sm:block">
+            Data Analyst &amp; Engineer // Toronto, CA
+          </span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-1 font-heading text-sm">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="experience.html" class="nav-link">Experience</a>
+        <a href="certifications.html" class="nav-link">Certifications</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <button class="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">🌙</button>
+        <button id="mobile-menu-btn" class="md:hidden p-2 border border-white/20 rounded-lg text-white">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 bg-black/95 px-4 py-4 space-y-2 font-heading text-sm">
+      <a href="index.html" class="block py-2 text-gray-300">Home</a>
+      <a href="about.html" class="block py-2 text-gray-300">About</a>
+      <a href="projects.html" class="block py-2 text-gray-300">Projects</a>
+      <a href="experience.html" class="block py-2 text-gray-300">Experience</a>
+      <a href="certifications.html" class="block py-2 text-gray-300">Certifications</a>
+      <a href="contact.html" class="block py-2 text-accent font-semibold">Contact</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-1 w-full max-w-7xl mx-auto p-4 sm:p-8 flex flex-col gap-14 relative z-10">
+
+    <!-- Page Header -->
+    <section class="pt-8 pb-4">
+      <div class="section-subtitle">Get in Touch</div>
+      <h1 class="text-3xl sm:text-5xl font-extrabold text-white mb-4 tracking-tight">
+        Let's Connect &amp; Collaborate
+      </h1>
+      <p class="text-secondary text-base sm:text-lg max-w-3xl leading-relaxed">
+        Looking for a Data Analyst to build reliable ETL pipelines, design high-impact Power BI dashboards, or optimize analytics workflows? Send a message or connect directly.
+      </p>
+    </section>
+
+    <!-- Contact Grid -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- Left: Direct Channels Card (5 cols) -->
+      <div class="lg:col-span-5 space-y-6">
+        
+        <div class="exec-card p-6 sm:p-8">
+          <h2 class="text-xl font-bold text-white font-heading mb-6 pb-3 border-b border-white/10">
+            Direct Contact Information
+          </h2>
+
+          <div class="space-y-4">
+            
+            <!-- Email -->
+            <div class="p-3.5 rounded-xl bg-surface border border-white/10 flex justify-between items-center">
+              <div>
+                <div class="text-[10px] font-mono text-muted uppercase">Email Address</div>
+                <a href="mailto:aumgajjar456@gmail.com" class="font-heading font-semibold text-white hover:text-accent transition-colors text-sm">
+                  aumgajjar456@gmail.com
+                </a>
+              </div>
+              <button class="btn-secondary text-xs py-1 px-3" id="btn-copy-email" 
+                      onclick="copyToClipboard('aumgajjar456@gmail.com', 'btn-copy-email')">
+                Copy
+              </button>
+            </div>
+
+            <!-- Phone -->
+            <div class="p-3.5 rounded-xl bg-surface border border-white/10 flex justify-between items-center">
+              <div>
+                <div class="text-[10px] font-mono text-muted uppercase">Phone / Mobile</div>
+                <a href="tel:+16476292456" class="font-heading font-semibold text-white hover:text-accent transition-colors text-sm">
+                  (647) 629-2456
+                </a>
+              </div>
+              <button class="btn-secondary text-xs py-1 px-3" id="btn-copy-phone" 
+                      onclick="copyToClipboard('(647) 629-2456', 'btn-copy-phone')">
+                Copy
+              </button>
+            </div>
+
+            <!-- Location -->
+            <div class="p-3.5 rounded-xl bg-surface border border-white/10">
+              <div class="text-[10px] font-mono text-muted uppercase">Location</div>
+              <div class="font-heading font-semibold text-white text-sm">
+                Toronto, ON M4S 0A4, Canada
+              </div>
+              <div class="text-xs text-muted mt-0.5">Available on-site, hybrid, &amp; remote</div>
+            </div>
+
+          </div>
+
+          <!-- Social Profiles -->
+          <div class="grid grid-cols-2 gap-3 pt-6 border-t border-white/10 mt-6">
+            <a href="https://www.linkedin.com/in/aum-gajjar-837874217" target="_blank" rel="noopener noreferrer" 
+               class="btn-secondary text-xs py-2.5 text-center flex items-center justify-center gap-1.5">
+              <span>LinkedIn Profile ↗</span>
+            </a>
+            <a href="https://github.com/Aum-gajjar" target="_blank" rel="noopener noreferrer" 
+               class="btn-secondary text-xs py-2.5 text-center flex items-center justify-center gap-1.5">
+              <span>GitHub Profile ↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Role Availability Card -->
+        <div class="exec-card p-6 bg-surface/50">
+          <div class="text-xs font-mono text-accent uppercase mb-2">Target Roles</div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="tech-pill text-xs">Data Analyst</span>
+            <span class="tech-pill text-xs">Business Intelligence Analyst</span>
+            <span class="tech-pill text-xs">Reporting Analyst</span>
+            <span class="tech-pill text-xs">Analytics Engineer</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right: Message Form (7 cols) -->
+      <div class="lg:col-span-7">
+        <div class="exec-card p-6 sm:p-8">
+          <h2 class="text-xl font-bold text-white font-heading mb-2">
+            Send a Direct Message
+          </h2>
+          <p class="text-secondary text-xs sm:text-sm mb-6">
+            Fill out the details below to open a formatted transmission directly to my inbox.
+          </p>
+
+          <form id="contact-form" class="space-y-4 font-body">
+            <div>
+              <label class="block text-xs font-heading font-semibold text-muted uppercase mb-1.5" for="contact-name">
+                Your Name / Company
+              </label>
+              <input type="text" id="contact-name" placeholder="Jane Doe / Acme Analytics" required 
+                     class="w-full bg-surface border border-white/15 rounded-xl p-3 text-white text-sm outline-none focus:border-accent transition-colors">
+            </div>
+
+            <div>
+              <label class="block text-xs font-heading font-semibold text-muted uppercase mb-1.5" for="contact-email">
+                Your Email Address
+              </label>
+              <input type="email" id="contact-email" placeholder="jane@example.com" required 
+                     class="w-full bg-surface border border-white/15 rounded-xl p-3 text-white text-sm outline-none focus:border-accent transition-colors">
+            </div>
+
+            <div>
+              <label class="block text-xs font-heading font-semibold text-muted uppercase mb-1.5" for="contact-message">
+                Message / Opportunity Details
+              </label>
+              <textarea id="contact-message" rows="5" placeholder="Hi Aum, I came across your portfolio and would like to discuss an opportunity..." required 
+                        class="w-full bg-surface border border-white/15 rounded-xl p-3 text-white text-sm outline-none focus:border-accent transition-colors"></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary w-full py-3 text-sm font-bold">
+              Send Message →
+            </button>
+
+            <div id="form-feedback" class="text-xs font-mono text-center min-h-[20px] pt-1"></div>
+          </form>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full border-t border-white/10 py-10 bg-secondary/80 backdrop-blur-md relative z-10 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm font-heading text-muted">
+      <div class="flex items-center gap-2">
+        <div class="w-2 h-2 rounded-full bg-accent"></div>
+        <span class="text-secondary font-medium">Aum Gajjar — Data Analyst Portfolio</span>
+      </div>
+      <div class="flex gap-6">
+        <a href="index.html" class="hover:text-accent transition-colors">Home</a>
+        <a href="about.html" class="hover:text-accent transition-colors">About</a>
+        <a href="projects.html" class="hover:text-accent transition-colors">Projects</a>
+        <a href="experience.html" class="hover:text-accent transition-colors">Experience</a>
+        <a href="certifications.html" class="hover:text-accent transition-colors">Certifications</a>
+        <a href="contact.html" class="hover:text-accent transition-colors">Contact</a>
+      </div>
+      <div class="text-xs text-muted">© 2026 AUM BIMALBHAI GAJJAR. ALL RIGHTS RESERVED.</div>
+    </div>
+  </footer>
+
+  <script src="data/portfolio-data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
