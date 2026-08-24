@@ -189,18 +189,54 @@
               </div>
 
               <!-- Computed Performance Chips -->
-              <div class="grid grid-cols-3 gap-2 text-center text-xs font-mono">
-                <div class="p-2 rounded bg-surface-elevated">
+              <div class="grid grid-cols-3 gap-2 text-center text-xs font-mono mb-4">
+                <div class="p-2 rounded-lg bg-surface-elevated border border-white/5">
                   <div class="text-muted text-[10px]">PRECISION</div>
-                  <div class="font-bold text-white" id="precision-display">0.3111</div>
+                  <div class="font-bold text-white text-sm" id="precision-display">0.3111</div>
                 </div>
-                <div class="p-2 rounded bg-surface-elevated">
+                <div class="p-2 rounded-lg bg-surface-elevated border border-white/5">
                   <div class="text-muted text-[10px]">F1-SCORE</div>
-                  <div class="font-bold text-white" id="f1-display">0.3964</div>
+                  <div class="font-bold text-white text-sm" id="f1-display">0.3964</div>
                 </div>
-                <div class="p-2 rounded bg-surface-elevated">
+                <div class="p-2 rounded-lg bg-surface-elevated border border-white/5">
                   <div class="text-muted text-[10px]">ROC-AUC</div>
-                  <div class="font-bold text-accent">0.6804</div>
+                  <div class="font-bold text-accent text-sm">0.6804</div>
+                </div>
+              </div>
+
+              <!-- Graphical Animated Gauges & Progress Bars -->
+              <div class="space-y-3 pt-3 border-t border-white/10">
+                <!-- Gauge 1: Clinical Recall / Sensitivity -->
+                <div>
+                  <div class="flex justify-between text-xs font-mono mb-1">
+                    <span class="text-muted">Sensitivity (Recall Rate)</span>
+                    <span class="text-accent font-bold" id="gauge-recall-val">54.7%</span>
+                  </div>
+                  <div class="w-full bg-surface-elevated h-2.5 rounded-full overflow-hidden">
+                    <div id="gauge-recall-bar" class="h-full bg-gradient-to-r from-sky-500 to-teal-400 rounded-full transition-all duration-300" style="width: 54.7%;"></div>
+                  </div>
+                </div>
+
+                <!-- Gauge 2: Specificity (Non-Readmit Accuracy) -->
+                <div>
+                  <div class="flex justify-between text-xs font-mono mb-1">
+                    <span class="text-muted">Specificity (True Negative Rate)</span>
+                    <span class="text-emerald-400 font-bold" id="gauge-spec-val">84.7%</span>
+                  </div>
+                  <div class="w-full bg-surface-elevated h-2.5 rounded-full overflow-hidden">
+                    <div id="gauge-spec-bar" class="h-full bg-gradient-to-r from-emerald-500 to-green-400 rounded-full transition-all duration-300" style="width: 84.7%;"></div>
+                  </div>
+                </div>
+
+                <!-- Gauge 3: Nurse Outreach Intervention Volume -->
+                <div>
+                  <div class="flex justify-between text-xs font-mono mb-1">
+                    <span class="text-muted">Hospital Outreach Workload</span>
+                    <span class="text-amber-400 font-bold" id="gauge-workload-val">19.7% Flagged</span>
+                  </div>
+                  <div class="w-full bg-surface-elevated h-2.5 rounded-full overflow-hidden">
+                    <div id="gauge-workload-bar" class="h-full bg-gradient-to-r from-amber-500 to-orange-400 rounded-full transition-all duration-300" style="width: 19.7%;"></div>
+                  </div>
                 </div>
               </div>
 

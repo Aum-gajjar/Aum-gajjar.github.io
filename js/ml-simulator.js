@@ -41,9 +41,8 @@
     const fp = Math.round(TOTAL_NEGATIVES * fpRatio);
     const tn = TOTAL_NEGATIVES - fp;
 
-    const recall = tp / (tp + fn);
-    const precision = (tp + fp > 0) ? (tp / (tp + fp)) : 0;
-    const f1 = (precision + recall > 0) ? (2 * (precision * recall) / (precision + recall)) : 0;
+    const specificity = tn / (tn + fp);
+    const workloadRate = (tp + fp) / (TOTAL_POSITIVES + TOTAL_NEGATIVES);
 
     if (elTP) elTP.textContent = tp.toLocaleString();
     if (elFN) elFN.textContent = fn.toLocaleString();
@@ -54,13 +53,30 @@
     if (elPrecision) elPrecision.textContent = `Precision: ${precision.toFixed(4)}`;
     if (elF1) elF1.textContent = `F1-Score: ${f1.toFixed(4)}`;
 
+    // Update graphical gauge bars & values
+    const elGaugeRecallVal = document.getElementById('gauge-recall-val');
+    const elGaugeRecallBar = document.getElementById('gauge-recall-bar');
+    const elGaugeSpecVal = document.getElementById('gauge-spec-val');
+    const elGaugeSpecBar = document.getElementById('gauge-spec-bar');
+    const elGaugeWorkloadVal = document.getElementById('gauge-workload-val');
+    const elGaugeWorkloadBar = document.getElementById('gauge-workload-bar');
+
+    if (elGaugeRecallVal) elGaugeRecallVal.textContent = `${(recall * 100).toFixed(1)}%`;
+    if (elGaugeRecallBar) elGaugeRecallBar.style.width = `${(recall * 100).toFixed(1)}%`;
+
+    if (elGaugeSpecVal) elGaugeSpecVal.textContent = `${(specificity * 100).toFixed(1)}%`;
+    if (elGaugeSpecBar) elGaugeSpecBar.style.width = `${(specificity * 100).toFixed(1)}%`;
+
+    if (elGaugeWorkloadVal) elGaugeWorkloadVal.textContent = `${(workloadRate * 100).toFixed(1)}% Flagged`;
+    if (elGaugeWorkloadBar) elGaugeWorkloadBar.style.width = `${(workloadRate * 100).toFixed(1)}%`;
+
     if (elInterpretation) {
       if (threshold < 0.35) {
-        elInterpretation.textContent = `Clinical Alert: High sensitivity mode minimizes missed high-risk readmissions (FN=${fn}), but incurs higher follow-up staff workload (FP=${fp}).`;
+        elInterpretation.textContent = `High Sensitivity Mode: Prioritizes catching readmissions (FN=${fn}), with increased nurse follow-up outreach volume (${(workloadRate * 100).toFixed(1)}% of all patients).`;
       } else if (threshold > 0.65) {
-        elInterpretation.textContent = `Conservative Alert: High specificity reduces false alarms (FP=${fp}), but risks missing ${fn} patients who require post-discharge intervention.`;
+        elInterpretation.textContent = `Conservative Specificity Mode: Limits false positives (FP=${fp}), but risks missing ${fn} high-risk clinical readmissions.`;
       } else {
-        elInterpretation.textContent = `Balanced Trade-off: Optimized operational threshold accounting for the 11.2% imbalanced positive readmission distribution.`;
+        elInterpretation.textContent = `Balanced Operational Threshold: Recommended threshold capturing positive readmission signals while maintaining manageable nurse workload.`;
       }
     }
   }
@@ -69,3 +85,4 @@
   // Initial call
   updateMatrix();
 })();
+
