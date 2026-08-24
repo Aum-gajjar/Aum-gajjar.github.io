@@ -17,21 +17,21 @@
 <body class="min-h-screen flex flex-col font-body text-sm sm:text-base">
 
   <!-- Sticky Navbar -->
-  <header class="navbar-wrapper">
-    <div class="navbar-pill">
-      <a href="index.html" class="flex items-center gap-2.5 text-decoration-none group">
+  <header class="navbar-sticky">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 py-3.5 flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-3 text-decoration-none group">
         <div class="status-indicator-dot"></div>
         <div class="flex flex-col">
-          <span class="font-heading text-sm sm:text-base font-bold tracking-tight text-white group-hover:text-accent transition-colors">
+          <span class="font-heading text-base sm:text-lg font-bold tracking-tight text-white group-hover:text-accent transition-colors">
             Aum Gajjar
           </span>
-          <span class="text-[10px] font-mono text-muted tracking-tight hidden sm:block">
-            Data Analyst // Toronto, CA
+          <span class="text-[11px] font-mono text-muted tracking-tight hidden sm:block">
+            Data Analyst &amp; Engineer // Toronto, CA
           </span>
         </div>
       </a>
 
-      <nav class="hidden md:flex items-center gap-1 font-heading text-xs sm:text-sm">
+      <nav class="hidden md:flex items-center gap-1 font-heading text-sm">
         <a href="index.html" class="nav-link">Home</a>
         <a href="about.html" class="nav-link active">About</a>
         <a href="projects.html" class="nav-link">Projects</a>
@@ -40,13 +40,13 @@
         <a href="contact.html" class="nav-link">Contact</a>
       </nav>
 
-      <div class="flex items-center gap-2">
-        <a href="mailto:aumgajjar456@gmail.com?subject=Data%20Analyst%20Opportunity" class="btn-primary text-xs py-1.5 px-3 hidden sm:inline-flex">
-          Contact Direct
+      <div class="flex items-center gap-3">
+        <a href="mailto:aumgajjar456@gmail.com?subject=Data%20Analyst%20Opportunity" class="btn-primary text-xs py-2 px-4 hidden sm:inline-flex">
+          Get in Touch
         </a>
         <button class="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">🌙</button>
-        <button id="mobile-menu-btn" class="md:hidden p-1.5 border border-white/20 rounded-full text-white hover:border-accent hover:text-accent">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <button id="mobile-menu-btn" class="md:hidden p-2 border border-white/20 rounded-lg text-white">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
@@ -54,7 +54,7 @@
     </div>
 
     <!-- Mobile Drawer -->
-    <div id="mobile-menu" class="hidden md:hidden max-w-md mx-auto mt-2 p-4 rounded-2xl bg-secondary/95 backdrop-blur-md border border-white/10 space-y-2 font-heading text-sm text-center shadow-xl pointer-events-auto">
+    <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 bg-black/95 px-4 py-4 space-y-2 font-heading text-sm">
       <a href="index.html" class="block py-2 text-gray-300">Home</a>
       <a href="about.html" class="block py-2 text-accent font-semibold">About</a>
       <a href="projects.html" class="block py-2 text-gray-300">Projects</a>
@@ -152,26 +152,11 @@
             <p class="text-xs text-muted mt-0.5">Relational data schemas, query optimization, and structured storage.</p>
           </div>
           <div class="flex flex-wrap gap-2 md:w-2/3">
-            <span class="tech-pill">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 3.79 2 6v12c0 2.21 4.48 4 10 4s10-1.79 10-4V6c0-2.21-4.48-4-10-4zm0 2c4.97 0 8 1.46 8 2s-3.03 2-8 2-8-1.46-8-2 3.03-2 8-2zm0 6c4.97 0 8 1.46 8 2s-3.03 2-8 2-8-1.46-8-2 3.03-2 8-2zm0 6c4.97 0 8 1.46 8 2s-3.03 2-8 2-8-1.46-8-2 3.03-2 8-2z" fill="#38bdf8"/></svg>
-              SQL
-            </span>
-            <span class="tech-pill">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M11.914 0C5.82 0 6.2 2.656 6.2 2.656l.006 2.752h5.804v.826H3.882S0 5.763 0 11.916c0 6.15 3.394 5.922 3.394 5.922h2.028v-2.846s-.11-3.394 3.338-3.394h5.75v-.844H8.76s-3.338.076-3.338-3.3c0-3.376 2.946-3.264 2.946-3.264h9.11s3.15-.038 3.15 3.188c0 3.226-.002 8.78-.002 8.78s.32 3.15-3.394 3.15h-1.896v-2.846H8.76v3.742s-.394 2.936 5.86 2.936c6.252 0 5.626-2.734 5.626-2.734l-.004-2.674h-5.748v-.844h8.21s3.884.45 3.884-5.71c0-6.16-3.41-5.94-3.41-5.94h-2.012V6.62s.114 3.394-3.338 3.394H12.09v.844h5.75s3.336-.076 3.336 3.3c0 3.376-2.948 3.264-2.948 3.264H9.118s-3.15.038-3.15-3.188c0-3.226.002-8.78.002-8.78S5.65 2.27 9.364 2.27h1.896v2.846h5.58V1.374S17.234 0 11.914 0z" fill="#3b82f6"/></svg>
-              Python 3
-            </span>
-            <span class="tech-pill">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#336791"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 16.5c-3.5 0-6.3-2.8-6.3-6.3S9.5 5.9 13 5.9s6.3 2.8 6.3 6.3-2.8 6.3-6.3 6.3z"/></svg>
-              PostgreSQL
-            </span>
-            <span class="tech-pill">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#00758f"><path d="M12 3C7.03 3 3 7.03 3 12s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm1 14h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
-              MySQL
-            </span>
-            <span class="tech-pill">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#003b57"><path d="M4 4h16v16H4z"/></svg>
-              SQLite3
-            </span>
+            <span class="tech-pill">SQL</span>
+            <span class="tech-pill">Python 3</span>
+            <span class="tech-pill">PostgreSQL</span>
+            <span class="tech-pill">MySQL</span>
+            <span class="tech-pill">SQLite3</span>
           </div>
         </div>
 
@@ -182,22 +167,11 @@
             <p class="text-xs text-muted mt-0.5">Interactive KPI reporting, DAX calculations, and executive dashboards.</p>
           </div>
           <div class="flex flex-wrap gap-2 md:w-2/3">
-            <span class="tech-pill">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#f2c811"><path d="M17 3h4v18h-4zM10 8h4v13h-4zM3 13h4v8H3z"/></svg>
-              Power BI
-            </span>
-            <span class="tech-pill">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#107c41"><path d="M21 4H9L3 8v8l6 4h12c.55 0 1-.45 1-1V5c0-.55-.45-1-1-1zm-9 12l-2-3-2 3H6l3.5-5L6 6h2l2 3 2-3h2l-3.5 5 3.5 5h-2z"/></svg>
-              Excel (VBA / Pivot)
-            </span>
-            <span class="tech-pill">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#e97627"><path d="M11 2h2v5h-2zm-6 6h5v2H5zm12 0h5v2h-5zM11 17h2v5h-2zm-8-6h3v2H3zm15 0h3v2h-3z"/></svg>
-              Tableau Public
-            </span>
-            <span class="tech-pill">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#38bdf8"><path d="M3 3v18h18v-2H5V3H3zm4 14h2v-4H7v4zm4 0h2V7h-2v10zm4 0h2v-7h-2v7z"/></svg>
-              DAX &amp; KPI Specs
-            </span>
+            <span class="tech-pill">Power BI</span>
+            <span class="tech-pill">Microsoft Excel (VBA/Pivot)</span>
+            <span class="tech-pill">Tableau Public</span>
+            <span class="tech-pill">KPI Metric Specs</span>
+            <span class="tech-pill">DAX Modeling</span>
           </div>
         </div>
 
@@ -208,22 +182,12 @@
             <p class="text-xs text-muted mt-0.5">Automated ETL workflows, serverless query engines, and cloud extraction.</p>
           </div>
           <div class="flex flex-wrap gap-2 md:w-2/3">
-            <span class="tech-pill">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#ff9900"><path d="M18.5 12c0-3.59-2.91-6.5-6.5-6.5-2.73 0-5.07 1.68-6.02 4.07C3.65 10.15 2 12.14 2 14.5 2 17.54 4.46 20 7.5 20h11c2.49 0 4.5-2.01 4.5-4.5 0-2.28-1.69-4.16-3.9-4.46-.07-.35-.1-.7-.1-1.04z"/></svg>
-              AWS Athena
-            </span>
-            <span class="tech-pill">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#ff9900"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-              AWS Data Wrangler
-            </span>
-            <span class="tech-pill">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#569a31"><path d="M19 4H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 15.17l7.59-7.59L21 9l-9 9z"/></svg>
-              Amazon S3
-            </span>
-            <span class="tech-pill">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#43b02a"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14h-2v-2h2v2zm0-4h-2V7h2v5z"/></svg>
-              Selenium &amp; Playwright
-            </span>
+            <span class="tech-pill">AWS Athena</span>
+            <span class="tech-pill">AWS Data Wrangler</span>
+            <span class="tech-pill">Amazon S3</span>
+            <span class="tech-pill">ETL Automation</span>
+            <span class="tech-pill">Selenium</span>
+            <span class="tech-pill">Playwright</span>
           </div>
         </div>
 
@@ -234,22 +198,12 @@
             <p class="text-xs text-muted mt-0.5">Exploratory analysis, predictive classification, and imbalanced datasets.</p>
           </div>
           <div class="flex flex-wrap gap-2 md:w-2/3">
-            <span class="tech-pill">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#150458"><path d="M4 4h4v16H4V4zm6 6h4v10h-4V10zm6-4h4v14h-4V6z"/></svg>
-              pandas &amp; NumPy
-            </span>
-            <span class="tech-pill">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#f37626"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-              XGBoost
-            </span>
-            <span class="tech-pill">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#00a88f"><path d="M12 2L2 12l10 10 10-10L12 2zm0 4.5l5.5 5.5-5.5 5.5-5.5-5.5L12 6.5z"/></svg>
-              LightGBM
-            </span>
-            <span class="tech-pill">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#f89939"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9v-2h2v2zm0-4H9V7h2v5zm4 4h-2V7h2v9z"/></svg>
-              Scikit-Learn
-            </span>
+            <span class="tech-pill">pandas</span>
+            <span class="tech-pill">NumPy</span>
+            <span class="tech-pill">XGBoost</span>
+            <span class="tech-pill">LightGBM</span>
+            <span class="tech-pill">Scikit-Learn</span>
+            <span class="tech-pill">Statistical Hypothesis Testing</span>
           </div>
         </div>
 
@@ -260,18 +214,9 @@
             <p class="text-xs text-muted mt-0.5">Operational workflow improvements and ERP reporting modules.</p>
           </div>
           <div class="flex flex-wrap gap-2 md:w-2/3">
-            <span class="tech-pill">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#714b67"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 16a6 6 0 110-12 6 6 0 010 12z"/></svg>
-              Odoo ERP
-            </span>
-            <span class="tech-pill">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#000000"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
-              Flask REST APIs
-            </span>
-            <span class="tech-pill">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#38bdf8"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
-              Business Rules &amp; Specs
-            </span>
+            <span class="tech-pill">Odoo ERP</span>
+            <span class="tech-pill">Flask APIs</span>
+            <span class="tech-pill">Business Rules Documentation</span>
           </div>
         </div>
 
@@ -282,22 +227,10 @@
             <p class="text-xs text-muted mt-0.5">Cross-functional stakeholder coordination and repeatable delivery.</p>
           </div>
           <div class="flex flex-wrap gap-2 md:w-2/3">
-            <span class="tech-pill">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#f05032"><path d="M21.6 10.9L13.1 2.4c-.5-.5-1.4-.5-1.9 0L9.4 4.2l2.4 2.4c.5-.2 1.2-.1 1.6.4.5.5.5 1.2.2 1.7l2.3 2.3c.5-.2 1.3-.2 1.7.3.7.7.7 1.8 0 2.5s-1.8.7-2.5 0c-.5-.5-.6-1.2-.3-1.8L12.5 9.1v5.9c.2.1.4.3.5.5.7.7.7 1.8 0 2.5s-1.8.7-2.5 0-1.8-.7 0-2.5c.2-.2.4-.3.6-.4V8.9c-.2-.1-.4-.3-.6-.4-.5-.5-.6-1.2-.2-1.8L7.9 4.3 2.4 9.8c-.5.5-.5 1.4 0 1.9l8.5 8.5c.5.5 1.4.5 1.9 0l8.8-8.8c.5-.5.5-1.4 0-1.9z"/></svg>
-              Git &amp; GitHub
-            </span>
-            <span class="tech-pill">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#0052cc"><path d="M11.5 2C6.25 2 2 6.25 2 11.5S6.25 21 11.5 21 21 16.75 21 11.5 16.75 2 11.5 2zm0 15c-1.93 0-3.5-1.57-3.5-3.5S9.57 10 11.5 10s3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/></svg>
-              Jira
-            </span>
-            <span class="tech-pill">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#22aa55"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 14h-2v-2h2v2zm0-4h-2V7h2v5z"/></svg>
-              Basecamp
-            </span>
-            <span class="tech-pill">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#38bdf8"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg>
-              Agile / Scrum
-            </span>
+            <span class="tech-pill">Git &amp; GitHub</span>
+            <span class="tech-pill">Jira</span>
+            <span class="tech-pill">Basecamp</span>
+            <span class="tech-pill">Agile / Scrum</span>
           </div>
         </div>
 

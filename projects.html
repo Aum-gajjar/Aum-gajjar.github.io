@@ -17,21 +17,21 @@
 <body class="min-h-screen flex flex-col font-body text-sm sm:text-base">
 
   <!-- Sticky Navbar -->
-  <header class="navbar-wrapper">
-    <div class="navbar-pill">
-      <a href="index.html" class="flex items-center gap-2.5 text-decoration-none group">
+  <header class="navbar-sticky">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 py-3.5 flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-3 text-decoration-none group">
         <div class="status-indicator-dot"></div>
         <div class="flex flex-col">
-          <span class="font-heading text-sm sm:text-base font-bold tracking-tight text-white group-hover:text-accent transition-colors">
+          <span class="font-heading text-base sm:text-lg font-bold tracking-tight text-white group-hover:text-accent transition-colors">
             Aum Gajjar
           </span>
-          <span class="text-[10px] font-mono text-muted tracking-tight hidden sm:block">
-            Data Analyst // Toronto, CA
+          <span class="text-[11px] font-mono text-muted tracking-tight hidden sm:block">
+            Data Analyst &amp; Engineer // Toronto, CA
           </span>
         </div>
       </a>
 
-      <nav class="hidden md:flex items-center gap-1 font-heading text-xs sm:text-sm">
+      <nav class="hidden md:flex items-center gap-1 font-heading text-sm">
         <a href="index.html" class="nav-link">Home</a>
         <a href="about.html" class="nav-link">About</a>
         <a href="projects.html" class="nav-link active">Projects</a>
@@ -40,13 +40,13 @@
         <a href="contact.html" class="nav-link">Contact</a>
       </nav>
 
-      <div class="flex items-center gap-2">
-        <a href="mailto:aumgajjar456@gmail.com?subject=Data%20Analyst%20Opportunity" class="btn-primary text-xs py-1.5 px-3 hidden sm:inline-flex">
-          Contact Direct
+      <div class="flex items-center gap-3">
+        <a href="mailto:aumgajjar456@gmail.com?subject=Data%20Analyst%20Opportunity" class="btn-primary text-xs py-2 px-4 hidden sm:inline-flex">
+          Get in Touch
         </a>
         <button class="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">🌙</button>
-        <button id="mobile-menu-btn" class="md:hidden p-1.5 border border-white/20 rounded-full text-white hover:border-accent hover:text-accent">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <button id="mobile-menu-btn" class="md:hidden p-2 border border-white/20 rounded-lg text-white">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
@@ -54,7 +54,7 @@
     </div>
 
     <!-- Mobile Drawer -->
-    <div id="mobile-menu" class="hidden md:hidden max-w-md mx-auto mt-2 p-4 rounded-2xl bg-secondary/95 backdrop-blur-md border border-white/10 space-y-2 font-heading text-sm text-center shadow-xl pointer-events-auto">
+    <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 bg-black/95 px-4 py-4 space-y-2 font-heading text-sm">
       <a href="index.html" class="block py-2 text-gray-300">Home</a>
       <a href="about.html" class="block py-2 text-gray-300">About</a>
       <a href="projects.html" class="block py-2 text-accent font-semibold">Projects</a>
@@ -189,54 +189,18 @@
               </div>
 
               <!-- Computed Performance Chips -->
-              <div class="grid grid-cols-3 gap-2 text-center text-xs font-mono mb-4">
-                <div class="p-2 rounded-lg bg-surface-elevated border border-white/5">
+              <div class="grid grid-cols-3 gap-2 text-center text-xs font-mono">
+                <div class="p-2 rounded bg-surface-elevated">
                   <div class="text-muted text-[10px]">PRECISION</div>
-                  <div class="font-bold text-white text-sm" id="precision-display">0.3111</div>
+                  <div class="font-bold text-white" id="precision-display">0.3111</div>
                 </div>
-                <div class="p-2 rounded-lg bg-surface-elevated border border-white/5">
+                <div class="p-2 rounded bg-surface-elevated">
                   <div class="text-muted text-[10px]">F1-SCORE</div>
-                  <div class="font-bold text-white text-sm" id="f1-display">0.3964</div>
+                  <div class="font-bold text-white" id="f1-display">0.3964</div>
                 </div>
-                <div class="p-2 rounded-lg bg-surface-elevated border border-white/5">
+                <div class="p-2 rounded bg-surface-elevated">
                   <div class="text-muted text-[10px]">ROC-AUC</div>
-                  <div class="font-bold text-accent text-sm">0.6804</div>
-                </div>
-              </div>
-
-              <!-- Graphical Animated Gauges & Progress Bars -->
-              <div class="space-y-3 pt-3 border-t border-white/10">
-                <!-- Gauge 1: Clinical Recall / Sensitivity -->
-                <div>
-                  <div class="flex justify-between text-xs font-mono mb-1">
-                    <span class="text-muted">Sensitivity (Recall Rate)</span>
-                    <span class="text-accent font-bold" id="gauge-recall-val">54.7%</span>
-                  </div>
-                  <div class="w-full bg-surface-elevated h-2.5 rounded-full overflow-hidden">
-                    <div id="gauge-recall-bar" class="h-full bg-gradient-to-r from-sky-500 to-teal-400 rounded-full transition-all duration-300" style="width: 54.7%;"></div>
-                  </div>
-                </div>
-
-                <!-- Gauge 2: Specificity (Non-Readmit Accuracy) -->
-                <div>
-                  <div class="flex justify-between text-xs font-mono mb-1">
-                    <span class="text-muted">Specificity (True Negative Rate)</span>
-                    <span class="text-emerald-400 font-bold" id="gauge-spec-val">84.7%</span>
-                  </div>
-                  <div class="w-full bg-surface-elevated h-2.5 rounded-full overflow-hidden">
-                    <div id="gauge-spec-bar" class="h-full bg-gradient-to-r from-emerald-500 to-green-400 rounded-full transition-all duration-300" style="width: 84.7%;"></div>
-                  </div>
-                </div>
-
-                <!-- Gauge 3: Nurse Outreach Intervention Volume -->
-                <div>
-                  <div class="flex justify-between text-xs font-mono mb-1">
-                    <span class="text-muted">Hospital Outreach Workload</span>
-                    <span class="text-amber-400 font-bold" id="gauge-workload-val">19.7% Flagged</span>
-                  </div>
-                  <div class="w-full bg-surface-elevated h-2.5 rounded-full overflow-hidden">
-                    <div id="gauge-workload-bar" class="h-full bg-gradient-to-r from-amber-500 to-orange-400 rounded-full transition-all duration-300" style="width: 19.7%;"></div>
-                  </div>
+                  <div class="font-bold text-accent">0.6804</div>
                 </div>
               </div>
 
