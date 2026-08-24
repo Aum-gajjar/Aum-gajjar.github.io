@@ -54,13 +54,13 @@
     </div>
 
     <!-- Mobile Drawer -->
-    <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 bg-black/95 px-4 py-4 space-y-2 font-heading text-sm">
-      <a href="index.html" class="block py-2 text-gray-300">Home</a>
-      <a href="about.html" class="block py-2 text-gray-300">About</a>
+    <div id="mobile-menu" class="hidden md:hidden mobile-menu-drawer px-4 py-4 space-y-2 font-heading text-sm">
+      <a href="index.html" class="block py-2 text-secondary hover:text-accent">Home</a>
+      <a href="about.html" class="block py-2 text-secondary hover:text-accent">About</a>
       <a href="projects.html" class="block py-2 text-accent font-semibold">Projects</a>
-      <a href="experience.html" class="block py-2 text-gray-300">Experience</a>
-      <a href="certifications.html" class="block py-2 text-gray-300">Certifications</a>
-      <a href="contact.html" class="block py-2 text-gray-300">Contact</a>
+      <a href="experience.html" class="block py-2 text-secondary hover:text-accent">Experience</a>
+      <a href="certifications.html" class="block py-2 text-secondary hover:text-accent">Certifications</a>
+      <a href="contact.html" class="block py-2 text-secondary hover:text-accent">Contact</a>
     </div>
   </header>
 
@@ -158,7 +158,7 @@
               </div>
 
               <!-- 2x2 Matrix -->
-              <div class="grid grid-cols-2 gap-3 mb-4">
+              <div class="matrix-wrapper"><div class="grid grid-cols-2 gap-3 mb-4">
                 <!-- True Negative -->
                 <div class="matrix-cell">
                   <span class="text-[11px] font-mono text-muted mb-1">TRUE NEGATIVE (TN)</span>
@@ -301,6 +301,131 @@
               <span class="tech-pill text-[11px]">Python</span>
               <span class="tech-pill text-[11px]">Power BI</span>
             </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         BI DASHBOARDS & REPORTING TELEMETRY SHOWCASE
+         ====================================================================== -->
+    <section id="dashboards-section">
+      <div class="section-header">
+        <div class="section-subtitle">03 / Executive Dashboards</div>
+        <h2 class="section-title">Business Intelligence &amp; Telemetry Reports</h2>
+        <p class="text-secondary text-sm mt-1 max-w-3xl">
+          High-impact executive reporting dashboards engineered in Power BI and Tableau, integrating direct database connectivity, DAX calculation groups, and operational KPIs.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        
+        <!-- Dashboard Card 1 -->
+        <div class="exec-card p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-center mb-3">
+              <span class="status-pill text-[10px]">POWER BI // DIRECTQUERY</span>
+              <span class="text-xs font-mono text-accent">KPI SUITE</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2 font-heading">
+              Executive Sales &amp; Operations KPI Dashboard
+            </h3>
+            <p class="text-secondary text-xs leading-relaxed mb-4">
+              Enterprise Power BI report tracking 12 operational KPIs, revenue run rate, regional variance, and inventory turnover across 30,000 monthly transactions.
+            </p>
+            <div class="p-3.5 rounded-xl bg-surface border border-white/10 mb-4 space-y-2 text-xs font-mono">
+              <div class="flex justify-between">
+                <span class="text-muted">MONTHLY VOLUME:</span>
+                <span class="text-white font-bold">30K+ Records</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-muted">KPI SPECS:</span>
+                <span class="text-accent font-bold">12 Active Metrics</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-muted">CONNECTIVITY:</span>
+                <span class="text-white font-bold">PostgreSQL / DirectQuery</span>
+              </div>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex justify-between items-center">
+            <span class="text-[11px] font-mono text-muted">DAX &amp; Data Modeling</span>
+            <a href="mailto:aumgajjar456@gmail.com?subject=Request%20Power%20BI%20Dashboard%20Demo" class="text-accent text-xs font-heading font-semibold hover:underline">
+              Request Demo Walkthrough →
+            </a>
+          </div>
+        </div>
+
+        <!-- Dashboard Card 2 -->
+        <div class="exec-card p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-center mb-3">
+              <span class="status-pill text-[10px]">TABLEAU // CLINICAL DATA</span>
+              <span class="text-xs font-mono text-accent">HEATMAP SUITE</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2 font-heading">
+              Clinical Healthcare &amp; 30-Day Readmission Analytics
+            </h3>
+            <p class="text-secondary text-xs leading-relaxed mb-4">
+              Comprehensive hospital analytics dashboard displaying patient cohort demographics, readmission risk heatmaps, and length-of-stay distribution.
+            </p>
+            <div class="p-3.5 rounded-xl bg-surface border border-white/10 mb-4 space-y-2 text-xs font-mono">
+              <div class="flex justify-between">
+                <span class="text-muted">DATASET SIZE:</span>
+                <span class="text-white font-bold">101,766 Encounters</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-muted">PREDICTIVE ROC:</span>
+                <span class="text-accent font-bold">0.6804 AUC</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-muted">DIMENSIONS:</span>
+                <span class="text-white font-bold">50+ Clinical Features</span>
+              </div>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex justify-between items-center">
+            <span class="text-[11px] font-mono text-muted">Cohort &amp; Visual Analytics</span>
+            <a href="mailto:aumgajjar456@gmail.com?subject=Request%20Tableau%20Dashboard%20Demo" class="text-accent text-xs font-heading font-semibold hover:underline">
+              Request Demo Walkthrough →
+            </a>
+          </div>
+        </div>
+
+        <!-- Dashboard Card 3 -->
+        <div class="exec-card p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-center mb-3">
+              <span class="status-pill text-[10px]">POWER BI // AWS ATHENA</span>
+              <span class="text-xs font-mono text-accent">TELEMETRY</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2 font-heading">
+              Cloud ETL Telemetry &amp; Logistics Performance
+            </h3>
+            <p class="text-secondary text-xs leading-relaxed mb-4">
+              Real-time operational monitoring dashboard visualizing Amazon Athena query latency, S3 ingestion batch volumes, and daily anomaly flags.
+            </p>
+            <div class="p-3.5 rounded-xl bg-surface border border-white/10 mb-4 space-y-2 text-xs font-mono">
+              <div class="flex justify-between">
+                <span class="text-muted">QUERY ENGINE:</span>
+                <span class="text-white font-bold">AWS Athena / S3</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-muted">QUERY LATENCY:</span>
+                <span class="text-accent font-bold">&lt; 2.0 Seconds</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-muted">COST REDUCTION:</span>
+                <span class="text-white font-bold">40%+ Scan Reduction</span>
+              </div>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex justify-between items-center">
+            <span class="text-[11px] font-mono text-muted">Cloud Architecture</span>
+            <a href="mailto:aumgajjar456@gmail.com?subject=Request%20Cloud%20Telemetry%20Demo" class="text-accent text-xs font-heading font-semibold hover:underline">
+              Request Demo Walkthrough →
+            </a>
           </div>
         </div>
 

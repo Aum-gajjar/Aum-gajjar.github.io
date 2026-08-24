@@ -94,10 +94,10 @@
   }
 
   // --------------------------------------------------------------------------
-  // 5. COPY TO CLIPBOARD HELPER
+  // 5. COPY TO CLIPBOARD HELPER (WITH ROBUST FALLBACK)
   // --------------------------------------------------------------------------
   window.copyToClipboard = function(text, elementId) {
-    navigator.clipboard.writeText(text).then(() => {
+    function showSuccess() {
       const el = document.getElementById(elementId);
       if (el) {
         const originalText = el.innerHTML;
@@ -111,7 +111,32 @@
           el.style.color = '';
         }, 2000);
       }
-    });
+    }
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(showSuccess).catch(() => {
+        fallbackCopy(text, showSuccess);
+      });
+    } else {
+      fallbackCopy(text, showSuccess);
+    }
+
+    function fallbackCopy(str, cb) {
+      const textArea = document.createElement('textarea');
+      textArea.value = str;
+      textArea.style.position = 'fixed';
+      textArea.style.opacity = '0';
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      try {
+        document.execCommand('copy');
+        cb();
+      } catch (err) {
+        console.error('Fallback copy failed', err);
+      }
+      document.body.removeChild(textArea);
+    }
   };
 
   // --------------------------------------------------------------------------
@@ -130,7 +155,7 @@
 
       if (!name || !email || !message) {
         if (formFeedback) {
-          formFeedback.innerHTML = `<span style="color: var(--accent-danger);">Please fill in all fields.</span>`;
+          formFeedback.innerHTML = `<span style="color: var(--accent-danger);">Please fill in all required fields.</span>`;
         }
         return;
       }
@@ -140,14 +165,14 @@
       }
 
       setTimeout(() => {
-        const mailtoUrl = `mailto:aumgajjar456@gmail.com?subject=${encodeURIComponent(`Data Analyst Inquiry from ${name}`)}&body=${encodeURIComponent(`From: ${name} (${email})\n\n${message}`)}`;
+        const mailtoUrl = `mailto:aumgajjar456@gmail.com?subject=${encodeURIComponent(`Data Analyst Opportunity / Inquiry from ${name}`)}&body=${encodeURIComponent(`From: ${name} (${email})\n\nMessage:\n${message}`)}`;
         window.location.href = mailtoUrl;
 
         if (formFeedback) {
-          formFeedback.innerHTML = `<span style="color: var(--accent-success);">✔ Mail client opened! You can also email directly at <a href="mailto:aumgajjar456@gmail.com" class="text-accent underline">aumgajjar456@gmail.com</a></span>`;
+          formFeedback.innerHTML = `<span style="color: var(--accent-success);">✔ Mail transmission initialized! You can also email directly at <a href="mailto:aumgajjar456@gmail.com" class="text-accent underline font-semibold">aumgajjar456@gmail.com</a></span>`;
         }
         contactForm.reset();
-      }, 600);
+      }, 500);
     });
   }
 

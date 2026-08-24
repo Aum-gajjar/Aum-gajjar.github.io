@@ -19,26 +19,24 @@
 
   if (!thresholdSlider) return;
 
-  // Real-world distribution from Diabetes 130-US Hospitals (11.2% positive readmission class)
-  const TOTAL_POSITIVES = 1142;
-  const TOTAL_NEGATIVES = 9034;
+  // Real-world distribution from Diabetes 130-US Hospitals validation set (N=10,176, 11.2% readmitted)
+  const TOTAL_POSITIVES = 1142; // 624 TP + 518 FN
+  const TOTAL_NEGATIVES = 9034; // 7652 TN + 1382 FP
 
   function updateMatrix() {
     const threshold = parseFloat(thresholdSlider.value) / 100;
     if (thresholdVal) thresholdVal.textContent = threshold.toFixed(2);
 
-    // Logistic sigmoid & power response simulation matching XGBoost probability distributions
-    // Higher threshold = stricter classification -> fewer positives predicted (higher precision, lower recall)
-    // Lower threshold = lenient classification -> more positives predicted (higher recall, lower precision)
-    
-    // Fitted to match benchmark 0.5466 recall at threshold = 0.50
-    const tpRatio = Math.max(0.05, Math.min(0.98, 1 - Math.pow(threshold, 0.72) * 0.76));
-    const fpRatio = Math.max(0.01, Math.min(0.95, Math.pow(1 - threshold, 1.85) * 0.62));
+    // Logistic response calibrated so at threshold=0.50: TP=624 (0.5464), FP=1382 (0.1530)
+    // Decreasing threshold increases TP & FP (higher recall, lower precision)
+    // Increasing threshold decreases TP & FP (higher precision, lower recall)
+    const tpRatio = Math.max(0.04, Math.min(0.98, 0.5464 * Math.pow(0.5 / Math.max(0.05, threshold), 0.65)));
+    const fpRatio = Math.max(0.008, Math.min(0.92, 0.1530 * Math.pow((1 - threshold) / 0.5, 1.45)));
 
-    const tp = Math.round(TOTAL_POSITIVES * tpRatio);
+    const tp = Math.round(TOTAL_POSITIVES * Math.min(0.98, tpRatio));
     const fn = TOTAL_POSITIVES - tp;
     
-    const fp = Math.round(TOTAL_NEGATIVES * fpRatio);
+    const fp = Math.round(TOTAL_NEGATIVES * Math.min(0.92, fpRatio));
     const tn = TOTAL_NEGATIVES - fp;
 
     const recall = tp / (tp + fn);
@@ -51,16 +49,16 @@
     if (elFP) elFP.textContent = fp.toLocaleString();
 
     if (elRecall) elRecall.textContent = `Recall: ${recall.toFixed(4)}`;
-    if (elPrecision) elPrecision.textContent = `Precision: ${precision.toFixed(4)}`;
-    if (elF1) elF1.textContent = `F1-Score: ${f1.toFixed(4)}`;
+    if (elPrecision) elPrecision.textContent = precision.toFixed(4);
+    if (elF1) elF1.textContent = f1.toFixed(4);
 
     if (elInterpretation) {
       if (threshold < 0.35) {
-        elInterpretation.textContent = `Clinical Alert: High sensitivity mode minimizes missed high-risk readmissions (FN=${fn}), but incurs higher follow-up staff workload (FP=${fp}).`;
+        elInterpretation.textContent = `High Sensitivity Alert: Capturing ${(recall * 100).toFixed(1)}% of readmission cases (FN=${fn}), but generating ${fp.toLocaleString()} false alarms for clinical staff.`;
       } else if (threshold > 0.65) {
-        elInterpretation.textContent = `Conservative Alert: High specificity reduces false alarms (FP=${fp}), but risks missing ${fn} patients who require post-discharge intervention.`;
+        elInterpretation.textContent = `High Specificity Alert: Minimizing false alarms (FP=${fp}), but missing ${fn} patients who require post-discharge intervention.`;
       } else {
-        elInterpretation.textContent = `Balanced Trade-off: Optimized operational threshold accounting for the 11.2% imbalanced positive readmission distribution.`;
+        elInterpretation.textContent = `Balanced Trade-off: Operational threshold capturing positive readmission cases while controlling nurse follow-up workload.`;
       }
     }
   }

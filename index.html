@@ -76,13 +76,13 @@
     </div>
 
     <!-- Mobile Drawer Menu -->
-    <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 bg-black/95 px-4 py-4 space-y-2 font-heading text-sm">
+    <div id="mobile-menu" class="hidden md:hidden mobile-menu-drawer px-4 py-4 space-y-2 font-heading text-sm">
       <a href="index.html" class="block py-2 text-accent font-semibold">Home</a>
-      <a href="about.html" class="block py-2 text-gray-300 hover:text-accent">About</a>
-      <a href="projects.html" class="block py-2 text-gray-300 hover:text-accent">Projects</a>
-      <a href="experience.html" class="block py-2 text-gray-300 hover:text-accent">Experience</a>
-      <a href="certifications.html" class="block py-2 text-gray-300 hover:text-accent">Certifications</a>
-      <a href="contact.html" class="block py-2 text-gray-300 hover:text-accent">Contact</a>
+      <a href="about.html" class="block py-2 text-secondary hover:text-accent">About</a>
+      <a href="projects.html" class="block py-2 text-secondary hover:text-accent">Projects</a>
+      <a href="experience.html" class="block py-2 text-secondary hover:text-accent">Experience</a>
+      <a href="certifications.html" class="block py-2 text-secondary hover:text-accent">Certifications</a>
+      <a href="contact.html" class="block py-2 text-secondary hover:text-accent">Contact</a>
     </div>
   </header>
 
@@ -292,6 +292,38 @@
       </div>
     </section>
 
+    <!-- Interactive Terminal CLI Section -->
+    <section>
+      <div class="section-header flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4">
+        <div>
+          <div class="section-subtitle">04 / Interactive Shell</div>
+          <h2 class="section-title">Developer &amp; Recruiter Terminal</h2>
+        </div>
+        <div class="text-xs font-mono text-muted">
+          Type <span class="text-accent font-semibold">'help'</span> or <span class="text-accent font-semibold">'sudo hire aum'</span>
+        </div>
+      </div>
+
+      <div class="terminal-window" id="terminal-container">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+          </div>
+          <div class="text-xs font-mono text-muted tracking-wider">aum@analytics-box: ~ (zsh)</div>
+          <div class="text-[11px] font-mono text-accent">CLI v2.0</div>
+        </div>
+        <div class="terminal-body" id="terminal-output">
+          <!-- Populated by terminal.js -->
+        </div>
+        <div class="terminal-prompt-line">
+          <span class="text-accent font-mono text-xs font-bold">root@aum-os:~$</span>
+          <input type="text" id="cmd-input" placeholder="Type a command (e.g. 'help', 'ls projects', 'sudo hire aum')..." autocomplete="off" spellcheck="false">
+        </div>
+      </div>
+    </section>
+
     <!-- Call to Action Banner -->
     <section class="exec-card p-8 sm:p-12 text-center relative overflow-hidden bg-gradient-to-r from-secondary to-surface">
       <div class="max-w-2xl mx-auto relative z-10">
@@ -341,6 +373,7 @@
   <!-- Scripts -->
   <script src="data/portfolio-data.js"></script>
   <script src="js/three-scene.js"></script>
+  <script src="js/terminal.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

@@ -190,7 +190,11 @@
     const profileTexture = textureLoader.load(
       'assets/profile.jpg',
       (tex) => {
-        tex.colorSpace = THREE.SRGBColorSpace;
+        if (typeof THREE.SRGBColorSpace !== 'undefined') {
+          tex.colorSpace = THREE.SRGBColorSpace;
+        } else if (typeof THREE.sRGBEncoding !== 'undefined') {
+          tex.encoding = THREE.sRGBEncoding;
+        }
         tex.generateMipmaps = true;
         tex.minFilter = THREE.LinearMipmapLinearFilter;
         tex.magFilter = THREE.LinearFilter;
