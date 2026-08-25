@@ -36,6 +36,9 @@
         printLine(`
 <div style="margin: 4px 0; border-left: 2px solid var(--sys-blue); padding-left: 8px;">
   <div style="color: var(--sys-blue); font-weight: bold;">AVAILABLE COMMANDS:</div>
+  <div>• <span style="color: var(--text-primary);">cv / resume</span>      - View &amp; download official CV / Resume PDF</div>
+  <div>• <span style="color: var(--text-primary);">awards / honors</span>  - View St. Clair College &amp; National awards</div>
+  <div>• <span style="color: var(--text-primary);">certs</span>            - List Salesforce, ServiceNow &amp; analytics certs</div>
   <div>• <span style="color: var(--text-primary);">sudo hire aum</span>    - Initiate direct recruitment &amp; contact protocol</div>
   <div>• <span style="color: var(--text-primary);">run metrics.exe</span>  - Execute telemetry &amp; performance diagnostics</div>
   <div>• <span style="color: var(--text-primary);">cat skills.txt</span>   - Display technical stack matrix</div>
@@ -44,6 +47,42 @@
   <div>• <span style="color: var(--text-primary);">contact</span>          - View full contact details &amp; profiles</div>
   <div>• <span style="color: var(--text-primary);">theme</span>            - Toggle UI Dark / Light mode</div>
   <div>• <span style="color: var(--text-primary);">clear</span>            - Clear terminal buffer</div>
+</div>
+        `);
+        break;
+
+      case 'cv':
+      case 'resume':
+      case 'open cv':
+        printLine(`<span style="color: var(--sys-blue);">Opening Aum Gajjar CV / Resume...</span>`);
+        setTimeout(() => {
+          printLine(`<div>📄 <a href="assets/Aum%20Gajjar%20CV.pdf" target="_blank" style="color: var(--sys-blue); font-weight: bold; text-decoration: underline;">[ Click here to open Aum Gajjar CV (PDF) ↗ ]</a></div>`);
+        }, 200);
+        break;
+
+      case 'awards':
+      case 'honors':
+        printLine(`
+<div style="margin: 4px 0;">
+  <div>🏆 <strong style="color: var(--sys-blue);">Most Involved Class Rep of the Year (2025-2026):</strong> Awarded by SRC St. Clair College</div>
+  <div>🥇 <strong style="color: var(--sys-blue);">Student Volunteer of the Year (2024-2025):</strong> St. Clair College Leadership Recognition</div>
+  <div>📜 <strong style="color: var(--sys-blue);">Letter of Academic Distinction (4.0 GPA):</strong> Zekelman School of Information Technology</div>
+  <div>🇨🇦 <strong style="color: var(--sys-blue);">National Volunteer Week Feature:</strong> Profiled by WEAVA (Windsor Essex Assoc. for Volunteering)</div>
+  <div class="mt-1"><a href="certifications.html#awards-section" style="color: var(--sys-blue); text-decoration: underline;">[ View full awards showcase on Certifications &amp; Honors page ↗ ]</a></div>
+</div>
+        `);
+        break;
+
+      case 'certs':
+      case 'certifications':
+        printLine(`
+<div style="margin: 4px 0;">
+  <div>⚡ <strong style="color: var(--sys-blue);">Salesforce Certified Associate &amp; Platform Foundation</strong> (Salesforce)</div>
+  <div>🚀 <strong style="color: var(--sys-blue);">ServiceNow Micro-Certification: Platform Analytics</strong> (ServiceNow)</div>
+  <div>🔧 <strong style="color: var(--sys-blue);">ServiceNow Micro-Certification: Welcome to ServiceNow</strong> (ServiceNow)</div>
+  <div>🌱 <strong style="color: var(--sys-blue);">TCS ESG Virtual Experience Program</strong> (Tata Consultancy Services &amp; Forage)</div>
+  <div>📊 <strong style="color: var(--sys-blue);">Career Essentials in Data Analysis</strong> (Microsoft &amp; LinkedIn)</div>
+  <div>🐍 <strong style="color: var(--sys-blue);">Python Essential Training</strong> (LinkedIn Learning)</div>
 </div>
         `);
         break;
@@ -61,7 +100,7 @@
    │  Status: READY FOR NEW OPPORTUNITIES           │
    └────────────────────────────────────────────────┘
 </pre>
-<div>👉 <a href="mailto:aumgajjar456@gmail.com" style="color: var(--sys-blue); text-decoration: underline;">[ Send Email to aumgajjar456@gmail.com ]</a> | <a href="https://www.linkedin.com/in/aum-gajjar-837874217" target="_blank" style="color: var(--sys-blue); text-decoration: underline;">[ Open LinkedIn Profile ]</a></div>
+<div>👉 <a href="assets/Aum%20Gajjar%20CV.pdf" target="_blank" style="color: var(--sys-blue); font-weight: bold; text-decoration: underline;">[ Download CV / Resume ]</a> | <a href="mailto:aumgajjar456@gmail.com" style="color: var(--sys-blue); text-decoration: underline;">[ Send Email ]</a> | <a href="https://www.linkedin.com/in/aum-gajjar-837874217" target="_blank" style="color: var(--sys-blue); text-decoration: underline;">[ LinkedIn ]</a></div>
           `);
         }, 300);
         break;
