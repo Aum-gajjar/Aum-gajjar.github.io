@@ -176,4 +176,51 @@
     });
   }
 
+  // --------------------------------------------------------------------------
+  // 7. LIGHTBOX MODAL HANDLER
+  // --------------------------------------------------------------------------
+  window.openMediaModal = function(src, title) {
+    let modal = document.getElementById('lightbox-modal');
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.id = 'lightbox-modal';
+      modal.className = 'lightbox-modal';
+      modal.innerHTML = `
+        <div class="lightbox-dialog" onclick="event.stopPropagation()">
+          <div class="lightbox-header">
+            <div class="font-heading font-bold text-white text-sm" id="lightbox-title">Credential Verification</div>
+            <button class="lightbox-close" onclick="closeMediaModal()" aria-label="Close Preview">&times;</button>
+          </div>
+          <div class="lightbox-body">
+            <img id="lightbox-img" src="" alt="Certificate / Award Preview">
+          </div>
+        </div>
+      `;
+      modal.addEventListener('click', window.closeMediaModal);
+      document.body.appendChild(modal);
+    }
+
+    const modalTitle = document.getElementById('lightbox-title');
+    const modalImg = document.getElementById('lightbox-img');
+    if (modalTitle) modalTitle.textContent = title || 'Credential Verification';
+    if (modalImg) modalImg.src = src;
+
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.closeMediaModal = function() {
+    const modal = document.getElementById('lightbox-modal');
+    if (modal) {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  };
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      window.closeMediaModal();
+    }
+  });
+
 })();
