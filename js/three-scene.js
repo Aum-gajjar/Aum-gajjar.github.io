@@ -6,168 +6,303 @@
   'use strict';
 
   // --------------------------------------------------------------------------
-  // 1. HERO 3D PARTICLE & CLUSTERING VISUALIZER
+  // 1. GLOBAL 3D AMBIENT BACKGROUND SCENE (ALL PAGES & SECTIONS)
   // --------------------------------------------------------------------------
-  const heroContainer = document.getElementById('three-canvas-container');
-  if (heroContainer && typeof THREE !== 'undefined') {
+  if (typeof THREE !== 'undefined') {
+    // Look for existing container or create a global fixed background canvas
+    let bgContainer = document.getElementById('global-three-canvas') || document.getElementById('three-canvas-container');
+    if (!bgContainer) {
+      bgContainer = document.createElement('div');
+      bgContainer.id = 'global-three-canvas';
+      document.body.prepend(bgContainer);
+    }
+
     const scene = new THREE.Scene();
     scene.background = null;
 
     const camera = new THREE.PerspectiveCamera(
-      75,
-      heroContainer.clientWidth / (heroContainer.clientHeight || 500),
+      60,
+      window.innerWidth / window.innerHeight,
       0.1,
       1000
     );
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
     
-    renderer.setSize(heroContainer.clientWidth, heroContainer.clientHeight || 500);
+    renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    heroContainer.appendChild(renderer.domElement);
+    bgContainer.appendChild(renderer.domElement);
 
-    const particleCount = 1600;
+    // Theme Color Configuration with calibrated light-mode visibility
+    function getThemeColors() {
+      const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+      return {
+        isLight: isLight,
+        particleBase: isLight ? new THREE.Color('#0284c7') : new THREE.Color('#38bdf8'),
+        particleAccent: isLight ? new THREE.Color('#2563eb') : new THREE.Color('#67e8f9'),
+        cubeWire: isLight ? 0x0284c7 : 0x38bdf8,
+        cubeFace: isLight ? 0xbae6fd : 0x0c2448,
+        particleOpacity: isLight ? 0.35 : 0.28,
+        cubeWireOpacity: isLight ? 0.40 : 0.32,
+        cubeFaceOpacity: isLight ? 0.16 : 0.20
+      };
+    }
+
+    let currentTheme = getThemeColors();
+
+    // ------------------------------------------------------------------------
+    // A. Global Particle Field
+    // ------------------------------------------------------------------------
+    const particleCount = 1000;
     const geometry = new THREE.BufferGeometry();
     
     const positions = new Float32Array(particleCount * 3);
-    const targetPositions = new Float32Array(particleCount * 3);
+    const origPositions = new Float32Array(particleCount * 3);
+    const velocities = new Float32Array(particleCount * 3);
     const colors = new Float32Array(particleCount * 3);
-    
-    const colorWhite = new THREE.Color('#ffffff');
-    const colorSysBlue = new THREE.Color('#00A3FF');
-    const colorMuted = new THREE.Color('#334155');
 
     for (let i = 0; i < particleCount; i++) {
-      const r = 11 * Math.random();
-      const theta = 2 * Math.PI * Math.random();
-      const phi = Math.acos(2 * Math.random() - 1);
-      
-      const x = r * Math.sin(phi) * Math.cos(theta);
-      const y = r * Math.sin(phi) * Math.sin(theta);
-      const z = r * Math.cos(phi);
+      const x = (Math.random() - 0.5) * 60;
+      const y = (Math.random() - 0.5) * 45;
+      const z = (Math.random() - 0.5) * 35 - 5;
 
       positions[i * 3] = x;
       positions[i * 3 + 1] = y;
       positions[i * 3 + 2] = z;
 
-      targetPositions[i * 3] = x;
-      targetPositions[i * 3 + 1] = y;
-      targetPositions[i * 3 + 2] = z;
+      origPositions[i * 3] = x;
+      origPositions[i * 3 + 1] = y;
+      origPositions[i * 3 + 2] = z;
 
-      colors[i * 3] = colorWhite.r;
-      colors[i * 3 + 1] = colorWhite.g;
-      colors[i * 3 + 2] = colorWhite.b;
+      const pColor = (i % 4 === 0) ? currentTheme.particleAccent : currentTheme.particleBase;
+      colors[i * 3] = pColor.r;
+      colors[i * 3 + 1] = pColor.g;
+      colors[i * 3 + 2] = pColor.b;
     }
 
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
-    const material = new THREE.PointsMaterial({
-      size: 0.16,
+    const particleMaterial = new THREE.PointsMaterial({
+      size: 0.10,
       vertexColors: true,
       transparent: true,
-      opacity: 0.85
+      opacity: currentTheme.particleOpacity,
+      blending: THREE.NormalBlending
     });
 
-    const particleSystem = new THREE.Points(geometry, material);
+    const particleSystem = new THREE.Points(geometry, particleMaterial);
     scene.add(particleSystem);
-    camera.position.z = 24;
 
-    let isClustered = false;
-    let clusterProgress = 1;
+    // ------------------------------------------------------------------------
+    // B. Floating Repelling 3D Micro-Cubes Scattered Everywhere
+    // ------------------------------------------------------------------------
+    const cubeGroup = new THREE.Group();
+    const cubeCount = 42;
+    const cubes = [];
 
-    function getThemeColors() {
-      const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-      return {
-        base: isLight ? new THREE.Color('#3b82f6') : new THREE.Color('#ffffff'),
-        active: isLight ? new THREE.Color('#0284c7') : new THREE.Color('#00A3FF'),
-        muted: isLight ? new THREE.Color('#94a3b8') : new THREE.Color('#334155')
+    const cubeGeo = new THREE.BoxGeometry(0.75, 0.75, 0.75);
+    const cubeEdgesGeo = new THREE.EdgesGeometry(cubeGeo);
+
+    for (let c = 0; c < cubeCount; c++) {
+      const cubeMat = new THREE.MeshBasicMaterial({
+        color: currentTheme.cubeFace,
+        transparent: true,
+        opacity: currentTheme.cubeFaceOpacity,
+        wireframe: false
+      });
+      const edgeMat = new THREE.LineBasicMaterial({
+        color: currentTheme.cubeWire,
+        transparent: true,
+        opacity: currentTheme.cubeWireOpacity,
+        linewidth: 1.5
+      });
+
+      const mesh = new THREE.Mesh(cubeGeo, cubeMat);
+      const wire = new THREE.LineSegments(cubeEdgesGeo, edgeMat);
+      mesh.add(wire);
+
+      // Distribute evenly and randomly across wide viewport & depth
+      const posX = (Math.random() - 0.5) * 55;
+      const posY = (Math.random() - 0.5) * 40;
+      const posZ = (Math.random() - 0.5) * 30 - 6;
+
+      const scale = 0.35 + Math.random() * 0.65;
+      mesh.scale.set(scale, scale, scale);
+      mesh.position.set(posX, posY, posZ);
+
+      mesh.userData = {
+        origX: posX,
+        origY: posY,
+        origZ: posZ,
+        vx: 0,
+        vy: 0,
+        vz: 0,
+        rotSpeedX: (Math.random() - 0.5) * 0.010,
+        rotSpeedY: (Math.random() - 0.5) * 0.012,
+        floatSpeed: 0.0010 + Math.random() * 0.0016,
+        floatOffset: Math.random() * Math.PI * 2,
+        cubeMat: cubeMat,
+        edgeMat: edgeMat
       };
+
+      cubeGroup.add(mesh);
+      cubes.push(mesh);
+    }
+    scene.add(cubeGroup);
+
+    camera.position.z = 26;
+
+    // ------------------------------------------------------------------------
+    // C. Global Mouse Tracking & Raycasting for Repulsion
+    // ------------------------------------------------------------------------
+    const mouseWorld = new THREE.Vector3(999, 999, 0);
+    const raycaster = new THREE.Raycaster();
+    const mouseNDC = new THREE.Vector2(999, 999);
+    const planeZ0 = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0);
+
+    function onPointerMove(e) {
+      const x = (e.clientX / window.innerWidth) * 2 - 1;
+      const y = -(e.clientY / window.innerHeight) * 2 + 1;
+      mouseNDC.set(x, y);
+
+      raycaster.setFromCamera(mouseNDC, camera);
+      raycaster.ray.intersectPlane(planeZ0, mouseWorld);
     }
 
-    function updateParticleColors() {
-      const themeColors = getThemeColors();
+    function onPointerLeave() {
+      mouseWorld.set(999, 999, 0);
+      mouseNDC.set(999, 999);
+    }
+
+    window.addEventListener('mousemove', onPointerMove, { passive: true });
+    window.addEventListener('mouseleave', onPointerLeave, { passive: true });
+
+    // ------------------------------------------------------------------------
+    // D. Theme Switcher Dynamic Observer
+    // ------------------------------------------------------------------------
+    function updateThemeStyles() {
+      currentTheme = getThemeColors();
+      particleMaterial.opacity = currentTheme.particleOpacity;
+
       for (let i = 0; i < particleCount; i++) {
-        let targetColor;
-        if (!isClustered) {
-          targetColor = themeColors.base;
-        } else {
-          const isHighRisk = colors[i * 3] === colorSysBlue.r && colors[i * 3 + 1] === colorSysBlue.g;
-          targetColor = isHighRisk ? themeColors.active : themeColors.muted;
-        }
-        colors[i * 3] = targetColor.r;
-        colors[i * 3 + 1] = targetColor.g;
-        colors[i * 3 + 2] = targetColor.b;
+        const pColor = (i % 4 === 0) ? currentTheme.particleAccent : currentTheme.particleBase;
+        colors[i * 3] = pColor.r;
+        colors[i * 3 + 1] = pColor.g;
+        colors[i * 3 + 2] = pColor.b;
       }
       geometry.attributes.color.needsUpdate = true;
-    }
 
-    // Observe theme changes
-    const themeObserver = new MutationObserver(() => {
-      updateParticleColors();
-    });
-    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
-
-    const clusterBtn = document.getElementById('cluster-btn');
-    if (clusterBtn) {
-      clusterBtn.addEventListener('click', () => {
-        isClustered = !isClustered;
-        clusterProgress = 0;
-        clusterBtn.innerHTML = isClustered 
-          ? `[ RESET DATASET DISTRIBUTION ]` 
-          : `[ RUN XGBoost CLUSTERING ]`;
-
-        const themeColors = getThemeColors();
-
-        for (let i = 0; i < particleCount; i++) {
-          const isHighRisk = Math.random() > 0.65;
-          const centerX = isHighRisk ? 7.5 : -7.5;
-          const centerY = isHighRisk ? 2.5 : -2.5;
-
-          const r = isClustered ? 4.2 * Math.random() : 11 * Math.random();
-          const theta = 2 * Math.PI * Math.random();
-          const phi = Math.acos(2 * Math.random() - 1);
-
-          targetPositions[i * 3] = (isClustered ? centerX : 0) + r * Math.sin(phi) * Math.cos(theta);
-          targetPositions[i * 3 + 1] = (isClustered ? centerY : 0) + r * Math.sin(phi) * Math.sin(theta);
-          targetPositions[i * 3 + 2] = r * Math.cos(phi);
-
-          const targetColor = isClustered 
-            ? (isHighRisk ? themeColors.active : themeColors.muted) 
-            : themeColors.base;
-
-          colors[i * 3] = targetColor.r;
-          colors[i * 3 + 1] = targetColor.g;
-          colors[i * 3 + 2] = targetColor.b;
-        }
-        geometry.attributes.color.needsUpdate = true;
+      cubes.forEach(cube => {
+        cube.userData.cubeMat.color.setHex(currentTheme.cubeFace);
+        cube.userData.cubeMat.opacity = currentTheme.cubeFaceOpacity;
+        cube.userData.edgeMat.color.setHex(currentTheme.cubeWire);
+        cube.userData.edgeMat.opacity = currentTheme.cubeWireOpacity;
       });
     }
 
-    function animateHeroScene() {
-      requestAnimationFrame(animateHeroScene);
+    const themeObserver = new MutationObserver(() => {
+      updateThemeStyles();
+    });
+    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 
-      particleSystem.rotation.y += 0.0018;
-      particleSystem.rotation.x += 0.0008;
+    // ------------------------------------------------------------------------
+    // E. Animation Loop with Repulsion Physics & Parallax Scroll
+    // ------------------------------------------------------------------------
+    let clock = 0;
 
-      if (clusterProgress < 1) {
-        clusterProgress += 0.025;
-        const pos = geometry.attributes.position.array;
-        for (let i = 0; i < pos.length; i++) {
-          pos[i] += (targetPositions[i] - pos[i]) * 0.08;
+    function animateGlobalScene() {
+      requestAnimationFrame(animateGlobalScene);
+      clock += 0.01;
+
+      // Gentle ambient rotation
+      particleSystem.rotation.y += 0.0004;
+      particleSystem.rotation.x += 0.0002;
+
+      // Parallax scroll depth adjustment
+      const scrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+      camera.position.y = -(scrollY * 0.006);
+
+      // Physics on Floating Cubes (Repulsion + Spring Return)
+      cubes.forEach(cube => {
+        cube.rotation.x += cube.userData.rotSpeedX;
+        cube.rotation.y += cube.userData.rotSpeedY;
+
+        const targetY = cube.userData.origY + Math.sin(clock * 1.5 + cube.userData.floatOffset) * 0.5;
+        const targetX = cube.userData.origX;
+        const targetZ = cube.userData.origZ;
+
+        // Mouse Repulsion Force
+        if (mouseWorld.x < 900) {
+          const dx = cube.position.x - mouseWorld.x;
+          const dy = (cube.position.y - camera.position.y) - mouseWorld.y;
+          const distSq = dx * dx + dy * dy;
+          const repelRadiusSq = 49; // radius of ~7 units
+
+          if (distSq < repelRadiusSq && distSq > 0.01) {
+            const dist = Math.sqrt(distSq);
+            const force = (1 - dist / 7.0) * 0.32;
+            cube.userData.vx += (dx / dist) * force;
+            cube.userData.vy += (dy / dist) * force;
+            cube.userData.vz += force * 0.15;
+          }
         }
-        geometry.attributes.position.needsUpdate = true;
+
+        // Spring Physics & Damping
+        cube.userData.vx += (targetX - cube.position.x) * 0.04;
+        cube.userData.vy += (targetY - cube.position.y) * 0.04;
+        cube.userData.vz += (targetZ - cube.position.z) * 0.04;
+
+        cube.userData.vx *= 0.88;
+        cube.userData.vy *= 0.88;
+        cube.userData.vz *= 0.88;
+
+        cube.position.x += cube.userData.vx;
+        cube.position.y += cube.userData.vy;
+        cube.position.z += cube.userData.vz;
+      });
+
+      // Physics on Particles (Dispersal around cursor)
+      const posArray = geometry.attributes.position.array;
+      if (mouseWorld.x < 900) {
+        for (let i = 0; i < particleCount; i += 2) {
+          const px = posArray[i * 3];
+          const py = posArray[i * 3 + 1] - camera.position.y;
+          const dx = px - mouseWorld.x;
+          const dy = py - mouseWorld.y;
+          const distSq = dx * dx + dy * dy;
+
+          if (distSq < 20 && distSq > 0.01) {
+            const dist = Math.sqrt(distSq);
+            const force = (1 - dist / 4.5) * 0.07;
+            velocities[i * 3] += (dx / dist) * force;
+            velocities[i * 3 + 1] += (dy / dist) * force;
+          }
+        }
       }
+
+      for (let i = 0; i < particleCount; i++) {
+        velocities[i * 3] += (origPositions[i * 3] - posArray[i * 3]) * 0.03;
+        velocities[i * 3 + 1] += (origPositions[i * 3 + 1] - posArray[i * 3 + 1]) * 0.03;
+        velocities[i * 3 + 2] += (origPositions[i * 3 + 2] - posArray[i * 3 + 2]) * 0.03;
+
+        velocities[i * 3] *= 0.88;
+        velocities[i * 3 + 1] *= 0.88;
+        velocities[i * 3 + 2] *= 0.88;
+
+        posArray[i * 3] += velocities[i * 3];
+        posArray[i * 3 + 1] += velocities[i * 3 + 1];
+        posArray[i * 3 + 2] += velocities[i * 3 + 2];
+      }
+      geometry.attributes.position.needsUpdate = true;
 
       renderer.render(scene, camera);
     }
-    animateHeroScene();
+    animateGlobalScene();
 
     window.addEventListener('resize', () => {
-      if (heroContainer.clientWidth > 0 && heroContainer.clientHeight > 0) {
-        camera.aspect = heroContainer.clientWidth / heroContainer.clientHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(heroContainer.clientWidth, heroContainer.clientHeight);
-      }
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
     });
   }
 
