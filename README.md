@@ -1,18 +1,21 @@
-# Aum Gajjar // SYSTEM.BOOT — Personal Data Portfolio
+# Aum Gajjar // SYSTEM.BOOT — Personal Data & Analytics Portfolio
 
 > **DATA. INFRASTRUCTURE. INSIGHT.**  
-> A high-performance, cyber-technical personal portfolio designed for Data Analytics, Cloud ETL Engineering, Machine Learning, and Executive BI Reporting.
+> A high-performance, cyber-technical personal portfolio designed for Data Analytics, Cloud ETL Engineering, Machine Learning, Generative AI Workflows, and Executive BI Reporting.
+>
+> 🌐 **Live Website:** [https://aum-gajjar.github.io](https://aum-gajjar.github.io)
 
 ---
 
 ## ⚡ Live Highlights & Features
 
-- **3D Particle Point Cloud & ML Clustering**: Interactive Three.js particle visualizer classifying 1,600+ nodes into clinical risk clusters.
-- **3D Holographic Profile Badge**: Cursor tilt-tracking avatar card rendered with Three.js.
-- **Interactive Confusion Matrix & Threshold Simulator**: Real-time recalculation of True Positives, False Positives, Recall, Precision, and F1-Score on the Diabetes 130-US Hospitals dataset (11.2% positive class).
-- **Animated Cloud ETL Pipeline**: Live animated flow diagram showing data packets moving across **Amazon S3 -> AWS Data Wrangler -> Amazon Athena -> Power BI**.
-- **Live BI Dashboards Telemetry**: Dedicated tabbed container configured with responsive iframe wrappers for Power BI and Tableau embed injection.
-- **Interactive Command-Line Interface (CLI)**: Terminal supporting commands (`help`, `sudo hire aum`, `run metrics.exe`, `cat skills.txt`, `ls projects`, `contact`, `clear`, `theme`).
+- **Multi-Page Technical Suite**: Dedicated executive pages for Home (`index.html`), About (`about.html`), Projects (`projects.html`), Experience (`experience.html`), Certifications & Honors (`certifications.html`), and Contact (`contact.html`).
+- **3D Particle Point Cloud & Avatar Tilt**: Interactive Three.js particle visualizer with repelling micro-cubes, mouse parallax depth, and 3D avatar card.
+- **Interactive Confusion Matrix & Threshold Simulator**: Real-time recalculation of True Positives, False Positives, Recall, Precision, and F1-Score on the Diabetes 130-US Hospitals dataset (100k+ records).
+- **Animated Cloud ETL Pipeline**: Visual flow diagram showing live animated data packets moving across **Amazon S3 ➔ AWS Data Wrangler ➔ Amazon Athena ➔ Power BI**.
+- **Verified Credentials & Lightbox Verification**: Interactive modals showcasing credentials from **Google (GenAI & Prompt Engineering Specialization)**, **Salesforce**, **ServiceNow**, and **St. Clair College** leadership honors.
+- **7-Domain Technical Matrix**: Full competencies across SQL, BI/DAX, Cloud ETL, Machine Learning, GenAI/Prompt Craft (Google Gemini & TCREI), ERP Systems, and Agile Delivery.
+- **Interactive Command-Line Interface (CLI v2.0)**: Terminal supporting commands (`help`, `certs`, `sudo hire aum`, `run metrics.exe`, `cat skills.txt`, `ls projects`, `contact`, `clear`, `theme`).
 - **Instant Dark & Light Mode**: Cybernetic dark theme default with high-contrast light mode toggle.
 
 ---
@@ -21,19 +24,27 @@
 
 ```
 Aum-Portfolio/
-├── index.html                  # Main single-page application entry
+├── index.html                  # Main entry with 3D card, career diagnostics, & terminal CLI
+├── about.html                  # Professional bio, values, & 7-domain technical matrix
+├── projects.html               # ML simulation, animated ETL flow, & dashboard telemetry
+├── experience.html             # Chronological career timeline & student leadership roles
+├── certifications.html         # Academic degrees, honors, & verified industry certifications
+├── contact.html                # Direct contact channels, scheduling, & communication form
 ├── data/
-│   └── portfolio-data.js       # Central data store for projects, metrics & profile info
+│   └── portfolio-data.js       # Central data store for profile, awards, certs & projects
 ├── css/
 │   └── style.css               # Design system, hardware borders, typography & theme overrides
 ├── js/
-│   ├── app.js                  # Theme switcher, dashboard tabs, punchcard, contact form
-│   ├── three-scene.js          # Three.js 3D particle visualizer & holographic avatar
+│   ├── app.js                  # Theme switcher, dashboard tabs, punchcard, & lightbox modal
+│   ├── three-scene.js          # Three.js 3D ambient particle system & holographic avatar
 │   ├── ml-simulator.js         # Interactive decision threshold confusion matrix
 │   └── terminal.js             # Interactive CLI command executor
 ├── assets/
-│   ├── profile.jpg             # LinkedIn profile headshot
-│   └── avatar-placeholder.svg  # Fallback cybernetic avatar asset
+│   ├── Aum Gajjar CV.pdf       # Downloadable executive curriculum vitae
+│   ├── profile.jpg             # Professional headshot
+│   ├── avatar-placeholder.svg  # Fallback cybernetic avatar asset
+│   ├── awards/                 # Academic distinction letters, SRC awards, & WEAVA features
+│   └── certifications/         # High-res badges & verified PDFs (Google, Salesforce, ServiceNow, TCS)
 ├── .gitignore                  # Git ignore rules
 └── README.md                   # Project documentation
 ```
