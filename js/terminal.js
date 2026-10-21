@@ -77,12 +77,14 @@
       case 'certifications':
         printLine(`
 <div style="margin: 4px 0;">
+  <div>🤖 <strong style="color: var(--sys-blue);">Google Prompting Essentials Specialization</strong> (Google &amp; Coursera) [2026]</div>
   <div>⚡ <strong style="color: var(--sys-blue);">Salesforce Certified Associate &amp; Platform Foundation</strong> (Salesforce)</div>
   <div>🚀 <strong style="color: var(--sys-blue);">ServiceNow Micro-Certification: Platform Analytics</strong> (ServiceNow)</div>
   <div>🔧 <strong style="color: var(--sys-blue);">ServiceNow Micro-Certification: Welcome to ServiceNow</strong> (ServiceNow)</div>
   <div>🌱 <strong style="color: var(--sys-blue);">TCS ESG Virtual Experience Program</strong> (Tata Consultancy Services &amp; Forage)</div>
   <div>📊 <strong style="color: var(--sys-blue);">Career Essentials in Data Analysis</strong> (Microsoft &amp; LinkedIn)</div>
   <div>🐍 <strong style="color: var(--sys-blue);">Python Essential Training</strong> (LinkedIn Learning)</div>
+  <div class="mt-1"><a href="certifications.html" style="color: var(--sys-blue); text-decoration: underline;">[ View verified credentials &amp; badges ↗ ]</a></div>
 </div>
         `);
         break;

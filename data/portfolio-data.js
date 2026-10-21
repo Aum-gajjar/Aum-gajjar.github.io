@@ -83,6 +83,17 @@ window.PORTFOLIO_DATA = {
 
   certifications: [
     {
+      id: "google-prompting-essentials",
+      title: "Google Prompting Essentials Specialization",
+      issuer: "Google & Coursera",
+      category: "Generative AI & Prompt Engineering",
+      description: "Mastered repeatable prompt design and Generative AI workflows: TCREI framework (Task, Context, References, Evaluate, Iterate), multi-step prompt chaining, multimodal inputs, temperature controls, and prompt versioning.",
+      media: "assets/certifications/google-prompting-essentials.png",
+      pdfUrl: "assets/certifications/google-prompting-essentials.pdf",
+      verifyUrl: "https://coursera.org/verify/specialization/IHI0CQL99MO5",
+      linkedinUrl: "https://lnkd.in/p/gFPbUsxR"
+    },
+    {
       id: "salesforce-certified-associate",
       title: "Salesforce Certified Associate & Platform Foundation",
       issuer: "Salesforce",
