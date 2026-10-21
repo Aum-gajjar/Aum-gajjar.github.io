@@ -51,13 +51,28 @@ Aum-Portfolio/
 
 ---
 
-## 🛠️ How to Add or Edit Projects
+## 🛠️ Central Data Store (`data/portfolio-data.js`)
 
-All project information is centralized in [`data/portfolio-data.js`](data/portfolio-data.js). To add a new project to your portfolio:
+All dynamic portfolio data is decoupled from markup and centrally maintained in [`data/portfolio-data.js`](data/portfolio-data.js).
 
-1. Open `data/portfolio-data.js`.
-2. Add a new object inside the `projects` array:
+### 1. Adding or Editing Verified Certifications
+Inside `PORTFOLIO_DATA.certifications`, add a new certification object:
+```javascript
+{
+  id: "google-prompting-essentials",
+  title: "Google Prompting Essentials Specialization",
+  issuer: "Google & Coursera",
+  category: "Generative AI & Prompt Engineering",
+  description: "Mastered repeatable prompt design and Generative AI workflows: TCREI framework (Task, Context, References, Evaluate, Iterate), multi-step prompt chaining, multimodal inputs, temperature controls, and prompt versioning.",
+  media: "assets/certifications/google-prompting-essentials.png",
+  pdfUrl: "assets/certifications/google-prompting-essentials.pdf",
+  verifyUrl: "https://coursera.org/verify/specialization/IHI0CQL99MO5",
+  linkedinUrl: "https://lnkd.in/p/gFPbUsxR"
+}
+```
 
+### 2. Adding or Editing Projects
+Inside `PORTFOLIO_DATA.projects`, add a new project object:
 ```javascript
 {
   id: "customer-churn-model",
@@ -74,13 +89,11 @@ All project information is centralized in [`data/portfolio-data.js`](data/portfo
 }
 ```
 
-3. Save the file. Your new project will immediately appear across the site and in the terminal CLI (`ls projects`)!
-
 ---
 
 ## 📊 How to Embed Live Tableau / Power BI Dashboards
 
-Inside [`index.html`](index.html), navigate to the `<!-- BI_TELEMETRY -->` section (`#dashboards-section`). Replace the placeholder iframe container with your published embed link:
+Inside [`projects.html`](projects.html), navigate to the `<!-- BI_TELEMETRY -->` section (`#dashboards-section`). Replace the iframe container with your published embed link:
 
 ### Power BI:
 ```html
@@ -104,13 +117,13 @@ Inside [`index.html`](index.html), navigate to the `<!-- BI_TELEMETRY -->` secti
 
 ## 🚀 How to Host on GitHub Pages (Free)
 
-1. Push this repository to your GitHub account (`https://github.com/Aum-gajjar/<repo-name>`).
+1. Push this repository to your GitHub account (`https://github.com/Aum-gajjar/Aum-gajjar.github.io`).
 2. In your GitHub repository:
    - Go to **Settings** > **Pages** (in the left sidebar).
    - Under **Build and deployment** > **Branch**, select `main` (root `/`).
    - Click **Save**.
 3. In under 60 seconds, your site will be live at:
-   `https://aum-gajjar.github.io/<repo-name>/`
+   `https://aum-gajjar.github.io/`
 
 ---
 
